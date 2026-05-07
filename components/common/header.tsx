@@ -16,11 +16,11 @@ export default function Header() {
                 <Link href="/"><img src="/logo.png" alt="logo" className="h-20 w-auto" /></Link>
 
                 <nav className="flex items-center gap-6 text-sm font-medium text-white">
-                    <a href="#inicio" className="hover:text-gris-oscuro transition-colors">Inicio</a>
-                    <a href="#info" className="hover:text-gris-oscuro transition-colors">Info</a>
-                    <a href="#ficha-tecnica" className="hover:text-gris-oscuro transition-colors">Ficha Técnica</a>
-                    <a href="#opiniones" className="hover:text-gris-oscuro transition-colors">Opiniones</a>
-                    <a href="#tarifas" className="hover:text-gris-oscuro transition-colors">Tarifas</a>
+                    <a href="/#inicio" className="hover:text-gris-oscuro transition-colors">Inicio</a>
+                    <a href="/#info" className="hover:text-gris-oscuro transition-colors">Info</a>
+                    <a href="/#ficha-tecnica" className="hover:text-gris-oscuro transition-colors">Ficha Técnica</a>
+                    <a href="/#opiniones" className="hover:text-gris-oscuro transition-colors">Opiniones</a>
+                    <a href="/#tarifas" className="hover:text-gris-oscuro transition-colors">Tarifas</a>
                     <a href="/preguntas-frecuentes" className="hover:text-gris-oscuro transition-colors">Preguntas Frecuentes</a>
                     <a href="/contacto" className="hover:text-gris-oscuro transition-colors">Contacto</a>
                 </nav>
@@ -50,11 +50,11 @@ export default function Header() {
             {/* Menú desplegable móvil */}
             {menuOpen && (
                 <div className="md:hidden flex flex-col px-6 pb-4 text-white font-medium">
-                    <a href="#inicio" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Inicio</a>
-                    <a href="#info" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Info</a>
-                    <a href="#ficha-tecnica" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Ficha Técnica</a>
-                    <a href="#opiniones" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Opiniones</a>
-                    <a href="#tarifas" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Tarifas</a>
+                    <a href="/#inicio" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Inicio</a>
+                    <a href="/#info" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Info</a>
+                    <a href="/#ficha-tecnica" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Ficha Técnica</a>
+                    <a href="/#opiniones" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Opiniones</a>
+                    <a href="/#tarifas" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Tarifas</a>
                     <a href="/preguntas-frecuentes" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Preguntas Frecuentes</a>
                     <a href="/contacto" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Contacto</a>
                     <div className="flex gap-4 pt-4 text-azul-oscuro">
