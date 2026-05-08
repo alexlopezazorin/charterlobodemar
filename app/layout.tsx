@@ -22,7 +22,9 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${outfit.className}`}>
         <Header/>
-        {children}
+        <main className="md:pt-28">
+          {children}
+        </main>
         <Footer/>
         {/* <CookieBanner /> */}
       </body>

@@ -17,6 +17,8 @@
   --color-azul-oscuro: #006090;
   --color-acento: #f09a00;
   --color-gris-oscuro: rgb(35,40,43);
+  --color-azul-claro-fondo: #e8f4fd;
+  --color-gris-claro: #4b5563;
 }
 
 @media (prefers-color-scheme: dark) {
