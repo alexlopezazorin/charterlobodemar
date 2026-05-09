@@ -3,7 +3,7 @@ import {Outfit} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
-// import CookieBanner from "@/components/cookie_banner";
+import CookieBanner from "@/components/cookies";
 
 
 const outfit = Outfit({subsets:['latin']});
@@ -26,7 +26,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer/>
-        {/* <CookieBanner /> */}
+        <CookieBanner />
       </body>
     </html>
   );

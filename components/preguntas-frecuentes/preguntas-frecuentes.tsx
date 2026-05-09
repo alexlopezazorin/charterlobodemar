@@ -1,5 +1,6 @@
 export default function PreguntasFrecuentes() {
     return (
+        <>
         <section className="min-h-screen bg-gradient-to-b from-azul-claro-fondo to-white py-16 px-4">
             <div className="max-w-5xl mx-auto">
 
@@ -83,5 +84,10 @@ export default function PreguntasFrecuentes() {
                 </div>
             </div>
         </section>
+
+        <a href="https://wa.me/637715281?text=Hola,%20quiero%20reservar%20una%20excursi%C3%B3n%20en%20barco%20para%20el%20siguiente%20fin%20de%20semana.%20%C2%BFTienes%20disponibilidad?" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center bg-verde-whatsapp hover:scale-110 transition-transform duration-300">
+            <img src="/whatsapp-logo.svg" alt="WhatsApp" className="w-8 h-8 brightness-0 invert"/>
+        </a>
+        </>
     );
 }
