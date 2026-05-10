@@ -35,6 +35,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.no-scrollbar {
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 .servicio-card {
   box-shadow: 0 10px 40px -8px rgba(0,0,0,0.25);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
