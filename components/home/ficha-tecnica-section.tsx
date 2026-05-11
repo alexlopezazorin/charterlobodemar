@@ -19,7 +19,7 @@ const fichatecnica = [
 
 export default function FichaTecnicaSection() {
     return (
-        <section id="ficha-tecnica" className="py-16 px-4">
+        <section id="ficha-tecnica" className="scroll-mt-[88px] md:scroll-mt-28 py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-azul-oscuro text-4xl font-bold mb-3">Ficha Tecnica</h2>
@@ -28,8 +28,8 @@ export default function FichaTecnicaSection() {
                 </div>
 
                 <div className="grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-6 md:gap-x-8 md:gap-y-12 group">
-                    {fichatecnica.map((servicio) => (
-                        <div key={servicio.alt} className="servicio-card bg-white rounded-2xl p-6 flex flex-col items-center text-center gap-4 hover:-translate-y-0.5 last:col-start-2 md:last:col-start-auto group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-300">
+                    {fichatecnica.map((servicio, index) => (
+                        <div key={servicio.alt} className={`servicio-card bg-white rounded-2xl p-6 flex-col items-center text-center gap-4 hover:-translate-y-0.5 group-hover:opacity-50 hover:!opacity-100 transition-opacity duration-300 ${index === fichatecnica.length - 1 ? 'hidden md:flex' : 'flex'}`}>
                             <img src={servicio.src} alt={servicio.alt} className="w-24 h-24 object-contain" />
                             <div className="flex flex-col gap-1">
                                 <p className="text-azul-oscuro font-bold text-sm md:text-base">{servicio.label1}</p>

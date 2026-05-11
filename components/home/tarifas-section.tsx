@@ -65,7 +65,7 @@ export default function TarifasSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} id="tarifas" className="py-16 px-4">
+        <section ref={sectionRef} id="tarifas" className="scroll-mt-[88px] md:scroll-mt-28 py-16 px-4">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-azul-oscuro text-4xl font-bold mb-3">Tarifas</h2>

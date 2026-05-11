@@ -50,3 +50,17 @@ body {
 .servicio-card:hover {
   box-shadow: 0 20px 60px -10px rgba(0,0,0,0.4);
 }
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.ticker-track {
+    animation: ticker 50s linear infinite;
+    width: max-content;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}

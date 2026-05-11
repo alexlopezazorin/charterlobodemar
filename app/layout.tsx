@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import CookieBanner from "@/components/cookies";
+import WhatsAppButton from "@/components/common/whatsapp-button";
 
 
 const outfit = Outfit({subsets:['latin']});
@@ -27,6 +28,7 @@ export default function RootLayout({
         </main>
         <Footer/>
         <CookieBanner />
+        <WhatsAppButton />
       </body>
     </html>
   );
