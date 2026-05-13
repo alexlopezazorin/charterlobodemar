@@ -5,13 +5,9 @@ const ROTATIONS = [-2.5, 1.8, -1.2];
 
 const instagramPosts = [
     { src: "/home/instagram/1.png" },
-    { src: "/home/instagram/2.png" },
     { src: "/home/instagram/3.png" },
     { src: "/home/instagram/4.png" },
-    { src: "/home/instagram/5.png" },
-    { src: "/home/instagram/6.png" },
     { src: "/home/instagram/7.png" },
-    { src: "/home/instagram/8.png" },
 ];
 
 export default function InstagramSection() {
@@ -36,8 +32,8 @@ export default function InstagramSection() {
             const r = Math.max(0, -rect.top);
 
             const getCardW = (a: number) => {
-                if (a < 3) return isMobile ? 196 : 246;
-                if (a < 6) return isMobile ? 231 : 289;
+                if (a < 1) return isMobile ? 196 : 246;
+                if (a < 3) return isMobile ? 231 : 289;
                 return isMobile ? 272 : 340;
             };
             const maxCardH = getCardW(6) * 1.135;
@@ -82,7 +78,7 @@ export default function InstagramSection() {
             ref={sectionRef}
             id="instagram"
             className="relative w-full z-30"
-            style={{ height: `calc(${200 + 50 * (instagramPosts.length - 1)}vh + 0px)` }}
+            style={{ height: `calc(${130 + 50 * (instagramPosts.length - 1)}vh + 0px)` }}
         >
             <div className="sticky top-0 h-[100svh] w-full">
 
@@ -119,9 +115,9 @@ export default function InstagramSection() {
 
                         <div
                             className={`relative mx-4 shrink-0 transform-gpu ${
-                                i < 3
+                                i < 1
                                     ? "w-[min(50vw,196px)] md:w-[min(24vw,246px)]"
-                                    : i < 6
+                                    : i < 3
                                     ? "w-[min(60vw,231px)] md:w-[min(28vw,289px)]"
                                     : "w-[min(70vw,272px)] md:w-[min(34vw,340px)]"
                             }`}

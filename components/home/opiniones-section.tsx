@@ -1,3 +1,7 @@
+'use client';
+
+import { useRef, useState, useEffect, useCallback } from 'react';
+
 const reviews = [
     {
         name: "Ana-María Barquero López",
@@ -22,7 +26,7 @@ const reviews = [
         text: "Un día espectacular e inolvidable a bordo de este barco maravilloso en La Manga! Juan Carlos es una persona seria y adorable y se preocupa por todo y todos. No duden ni un minuto en pasar un día o más navegando con él!",
     },
     {
-        name: "Cristina Escribano Sánchez",
+        name: "Cristina",
         date: "23-08-2025",
         text: "Una experiencia increíble en alta mar. Estuve con unas amigas en el velero con Juan Carlos como patrón y no puedo estar más contenta con la experiencia. Es super amable, atento y muy profesional. Te respeta totalmente tu espacio e intimidad, pero siempre está disponible para resolver cualquier duda o ayudarte con lo que necesites. Además, se adapta a cualquier imprevisto y lo hace todo muy fácil. Sin duda, lo recomiendo 100% si quieres pasar un día diferente y especial navegando.",
     },
@@ -58,31 +62,14 @@ const reviews = [
 ];
 
 const avatarColors = [
-    "bg-azul",
-    "bg-azul-oscuro",
-    "bg-acento",
-    "bg-gris-oscuro",
-    "bg-verde-whatsapp",
-    "bg-azul",
-    "bg-azul-oscuro",
-    "bg-acento",
-    "bg-gris-oscuro",
-    "bg-verde-whatsapp",
+    "bg-azul", "bg-azul-oscuro", "bg-acento", "bg-gris-oscuro", "bg-verde-whatsapp",
+    "bg-azul", "bg-azul-oscuro", "bg-acento", "bg-gris-oscuro", "bg-verde-whatsapp",
 ];
 
 const borderColors = [
-    "#4381d1",
-    "#006090",
-    "#f09a00",
-    "rgb(35,40,43)",
-    "#075E54",
-    "#4381d1",
-    "#006090",
-    "#f09a00",
-    "rgb(35,40,43)",
-    "#075E54",
+    "#4381d1", "#006090", "#f09a00", "rgb(35,40,43)", "#075E54",
+    "#4381d1", "#006090", "#f09a00", "rgb(35,40,43)", "#075E54",
 ];
-
 
 function GoogleLogo({ size = 18 }: { size?: number }) {
     return (
@@ -96,7 +83,180 @@ function GoogleLogo({ size = 18 }: { size?: number }) {
 }
 
 export default function OpinionesSection() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+    const isPaused = useRef(false);
+    const isModalOpen = useRef(false);
+    const isDragging = useRef(false);
+    const hasDragged = useRef(false);
+    const dragStartX = useRef(0);
+    const scrollStart = useRef(0);
+    const animFrameRef = useRef<number | null>(null);
+    const velocity = useRef(0);
+    const momentum = useRef(false);
+    const lastPointerX = useRef(0);
+    const lastPointerTime = useRef(0);
+
+    // Keep isModalOpen ref in sync with state
+    useEffect(() => {
+        isModalOpen.current = selectedIndex !== null;
+        isPaused.current = selectedIndex !== null;
+    }, [selectedIndex]);
+
+    // Auto scroll via requestAnimationFrame
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const tick = () => {
+            const half = container.scrollWidth / 2;
+            if (momentum.current && Math.abs(velocity.current) > 0.05) {
+                container.scrollLeft += velocity.current * 16;
+                velocity.current *= 0.93;
+                if (container.scrollLeft >= half) container.scrollLeft -= half;
+                if (container.scrollLeft < 0) container.scrollLeft += half;
+            } else if (momentum.current) {
+                momentum.current = false;
+                velocity.current = 0;
+            } else if (!isPaused.current) {
+                container.scrollLeft += 1;
+                if (container.scrollLeft >= half) container.scrollLeft -= half;
+            }
+            animFrameRef.current = requestAnimationFrame(tick);
+        };
+
+        animFrameRef.current = requestAnimationFrame(tick);
+        return () => {
+            if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current);
+        };
+    }, []);
+
+    // Mouse drag
+    const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+        isDragging.current = true;
+        hasDragged.current = false;
+        momentum.current = false;
+        velocity.current = 0;
+        isPaused.current = true;
+        dragStartX.current = e.clientX;
+        scrollStart.current = containerRef.current?.scrollLeft ?? 0;
+        lastPointerX.current = e.clientX;
+        lastPointerTime.current = performance.now();
+        e.preventDefault();
+    };
+
+    const onMouseMove = useCallback((e: MouseEvent) => {
+        if (!isDragging.current || !containerRef.current) return;
+        const dx = e.clientX - dragStartX.current;
+        if (Math.abs(dx) > 4) hasDragged.current = true;
+        const container = containerRef.current;
+        const half = container.scrollWidth / 2;
+        let newLeft = scrollStart.current - dx;
+        if (newLeft >= half) newLeft -= half;
+        if (newLeft < 0) newLeft += half;
+        container.scrollLeft = newLeft;
+        const now = performance.now();
+        const dt = now - lastPointerTime.current;
+        if (dt > 0 && dt < 100) {
+            velocity.current = Math.max(-15, Math.min(15, -(e.clientX - lastPointerX.current) / dt));
+        }
+        lastPointerX.current = e.clientX;
+        lastPointerTime.current = now;
+    }, []);
+
+    const onMouseUp = useCallback(() => {
+        if (!isDragging.current) return;
+        isDragging.current = false;
+        if (!isModalOpen.current && Math.abs(velocity.current) > 0.1) {
+            momentum.current = true;
+        }
+        isPaused.current = isModalOpen.current;
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
+        return () => {
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('mouseup', onMouseUp);
+        };
+    }, [onMouseMove, onMouseUp]);
+
+    // Touch drag on carousel
+    const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        hasDragged.current = false;
+        momentum.current = false;
+        velocity.current = 0;
+        isPaused.current = true;
+        dragStartX.current = e.touches[0].clientX;
+        scrollStart.current = containerRef.current?.scrollLeft ?? 0;
+        lastPointerX.current = e.touches[0].clientX;
+        lastPointerTime.current = performance.now();
+    };
+
+    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+        if (!containerRef.current) return;
+        const touch = e.touches[0];
+        const dx = touch.clientX - dragStartX.current;
+        if (Math.abs(dx) > 4) hasDragged.current = true;
+        const container = containerRef.current;
+        const half = container.scrollWidth / 2;
+        let newLeft = scrollStart.current - dx;
+        if (newLeft >= half) newLeft -= half;
+        if (newLeft < 0) newLeft += half;
+        container.scrollLeft = newLeft;
+        const now = performance.now();
+        const dt = now - lastPointerTime.current;
+        if (dt > 0 && dt < 100) {
+            velocity.current = Math.max(-15, Math.min(15, -(touch.clientX - lastPointerX.current) / dt));
+        }
+        lastPointerX.current = touch.clientX;
+        lastPointerTime.current = now;
+    };
+
+    const onTouchEnd = () => {
+        if (!isModalOpen.current && Math.abs(velocity.current) > 0.1) {
+            momentum.current = true;
+        }
+        isPaused.current = isModalOpen.current;
+    };
+
+    // Modal swipe
+    const modalSwipeX = useRef(0);
+
+    const onModalTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        modalSwipeX.current = e.touches[0].clientX;
+        e.stopPropagation();
+    };
+
+    const onModalTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+        const dx = modalSwipeX.current - e.changedTouches[0].clientX;
+        if (Math.abs(dx) > 50) {
+            setSelectedIndex(prev => {
+                if (prev === null) return null;
+                return dx > 0
+                    ? (prev + 1) % reviews.length
+                    : (prev - 1 + reviews.length) % reviews.length;
+            });
+        }
+        e.stopPropagation();
+    };
+
+    // Keyboard navigation in modal
+    useEffect(() => {
+        if (selectedIndex === null) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowRight') setSelectedIndex(p => p !== null ? (p + 1) % reviews.length : null);
+            else if (e.key === 'ArrowLeft') setSelectedIndex(p => p !== null ? (p - 1 + reviews.length) % reviews.length : null);
+            else if (e.key === 'Escape') setSelectedIndex(null);
+        };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, [selectedIndex]);
+
     const doubled = [...reviews, ...reviews];
+    const selected = selectedIndex !== null ? reviews[selectedIndex] : null;
 
     return (
         <section id="opiniones" className="scroll-mt-[88px] md:scroll-mt-28 py-16">
@@ -124,45 +284,137 @@ export default function OpinionesSection() {
                 </div>
             </div>
 
-            <div className="relative overflow-x-clip">
+            {/* Carousel */}
+            <div className="relative">
                 <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white to-transparent" />
                 <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white to-transparent" />
-                <div className="ticker-track flex gap-5 py-6">
-                    {doubled.map((review, i) => (
-                        <div
-                            key={i}
-                            className="flex-shrink-0 w-72 bg-azul-claro-fondo/40 rounded-2xl p-6 flex flex-col gap-3 servicio-card border-t-4"
-                            style={{ borderTopColor: borderColors[i % reviews.length] }}
-                        >
-                            <div className="flex items-start justify-between gap-2">
-                                <div className="flex items-center gap-3">
-                                    {review.photo ? (
-                                        <img src={review.photo} alt={review.name} className="w-10 h-10 rounded-full flex-shrink-0 object-cover" />
-                                    ) : (
-                                        <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-base ${avatarColors[i % reviews.length]}`}>
-                                            {review.name.charAt(0).toUpperCase()}
+                <div
+                    ref={containerRef}
+                    className="overflow-x-hidden no-scrollbar select-none cursor-grab active:cursor-grabbing"
+                    style={{ touchAction: 'pan-y' }}
+                    onMouseDown={onMouseDown}
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                >
+                    <div className="flex gap-5 py-6" style={{ width: 'max-content' }}>
+                        {doubled.map((review, i) => (
+                            <div
+                                key={i}
+                                className="flex-shrink-0 w-72 bg-azul-claro-fondo/40 rounded-2xl p-6 flex flex-col gap-3 opinion-card border-t-4 cursor-pointer"
+                                style={{ borderTopColor: borderColors[i % reviews.length] }}
+                                onClick={() => {
+                                    if (!hasDragged.current) setSelectedIndex(i % reviews.length);
+                                }}
+                            >
+                                <div className="flex items-start justify-between gap-2">
+                                    <div className="flex items-center gap-3">
+                                        {review.photo ? (
+                                            <img src={review.photo} alt={review.name} className="w-10 h-10 rounded-full flex-shrink-0 object-cover" />
+                                        ) : (
+                                            <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-base ${avatarColors[i % reviews.length]}`}>
+                                                {review.name.charAt(0).toUpperCase()}
+                                            </div>
+                                        )}
+                                        <div>
+                                            <p className="font-semibold text-gris-oscuro text-sm leading-tight">{review.name}</p>
+                                            <p className="text-xs text-gris-claro mt-0.5">{review.date}</p>
                                         </div>
-                                    )}
-                                    <div>
-                                        <p className="font-semibold text-gris-oscuro text-sm leading-tight">{review.name}</p>
-                                        <p className="text-xs text-gris-claro mt-0.5">{review.date}</p>
                                     </div>
+                                    <span className="text-acento text-sm tracking-wider flex-shrink-0">★★★★★</span>
                                 </div>
-                                <span className="text-acento text-sm tracking-wider flex-shrink-0">★★★★★</span>
+                                <p className="text-gris-claro text-sm leading-relaxed line-clamp-5">{review.text}</p>
+                                <div className="flex items-center gap-1.5 pt-2 border-t border-gray-100">
+                                    <GoogleLogo size={14} />
+                                    <span className="text-xs text-gris-claro">Reseña de Google</span>
+                                </div>
                             </div>
-                            <p className="text-gris-claro text-sm leading-relaxed line-clamp-5">{review.text}</p>
-                            <div className="flex items-center gap-1.5 pt-2 border-t border-gray-100">
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Modal */}
+            {selected && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+                    onClick={() => setSelectedIndex(null)}
+                    style={{ touchAction: 'none' }}
+                >
+                    <div
+                        className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-2xl relative"
+                        onClick={e => e.stopPropagation()}
+                        onTouchStart={onModalTouchStart}
+                        onTouchEnd={onModalTouchEnd}
+                    >
+                        {/* Close */}
+                        <button
+                            onClick={() => setSelectedIndex(null)}
+                            className="absolute top-4 right-4 text-gris-claro hover:text-gris-oscuro w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-lg"
+                            aria-label="Cerrar"
+                        >
+                            ✕
+                        </button>
+
+                        {/* Prev */}
+                        <button
+                            onClick={() => setSelectedIndex(prev => prev !== null ? (prev - 1 + reviews.length) % reviews.length : null)}
+                            className="absolute left-2 top-1/2 -translate-y-1/2 text-gris-claro hover:text-gris-oscuro w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-3xl leading-none"
+                            aria-label="Anterior"
+                        >
+                            ‹
+                        </button>
+
+                        {/* Next */}
+                        <button
+                            onClick={() => setSelectedIndex(prev => prev !== null ? (prev + 1) % reviews.length : null)}
+                            className="absolute right-2 top-1/2 -translate-y-1/2 text-gris-claro hover:text-gris-oscuro w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-3xl leading-none"
+                            aria-label="Siguiente"
+                        >
+                            ›
+                        </button>
+
+                        {/* Content */}
+                        <div className="px-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                {selected.photo ? (
+                                    <img src={selected.photo} alt={selected.name} className="w-12 h-12 rounded-full flex-shrink-0 object-cover" />
+                                ) : (
+                                    <div className={`w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-lg ${avatarColors[selectedIndex ?? 0]}`}>
+                                        {selected.name.charAt(0).toUpperCase()}
+                                    </div>
+                                )}
+                                <div>
+                                    <p className="font-semibold text-gris-oscuro leading-tight">{selected.name}</p>
+                                    <p className="text-sm text-gris-claro mt-0.5">{selected.date}</p>
+                                </div>
+                                <span className="ml-auto text-acento tracking-wider flex-shrink-0">★★★★★</span>
+                            </div>
+                            <p className="text-gris-claro leading-relaxed text-sm mb-4">{selected.text}</p>
+                            <div className="flex items-center gap-1.5 pt-3 border-t border-gray-100">
                                 <GoogleLogo size={14} />
                                 <span className="text-xs text-gris-claro">Reseña de Google</span>
                             </div>
                         </div>
-                    ))}
+
+                        {/* Dots */}
+                        <div className="flex justify-center gap-1.5 mt-5">
+                            {reviews.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setSelectedIndex(i)}
+                                    className={`rounded-full transition-all duration-200 ${i === selectedIndex ? 'w-4 h-2 bg-azul' : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'}`}
+                                    aria-label={`Ir a reseña ${i + 1}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <div className="text-center mt-10">
                 <a
-                    href="https://maps.app.goo.gl/7nqsUgrXmdJUkgA27"
+                    href="https://g.page/r/CfQ1uKsviPF5EBM/review"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-azul text-white font-semibold px-6 py-3 rounded-full hover:bg-azul-oscuro transition-colors duration-300"

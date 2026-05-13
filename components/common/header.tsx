@@ -19,8 +19,8 @@ export default function Header() {
                     <a href="/#inicio" className="hover:text-gris-oscuro transition-colors">Inicio</a>
                     <a href="/#info" className="hover:text-gris-oscuro transition-colors">Info</a>
                     <a href="/#tarifas" className="hover:text-gris-oscuro transition-colors">Tarifas</a>
-                    <a href="/#la-manga" className="hover:text-gris-oscuro transition-colors">La Manga del Mar Menor</a>
                     <a href="/#ficha-tecnica" className="hover:text-gris-oscuro transition-colors">Ficha Técnica</a>
+                    <a href="/la-manga" className="hover:text-gris-oscuro transition-colors">La Manga del Mar Menor</a>
                     <a href="/preguntas-frecuentes" className="hover:text-gris-oscuro transition-colors">Preguntas Frecuentes</a>
                     <a href="/contacto" className="hover:text-gris-oscuro transition-colors">Contacto</a>
                 </nav>
@@ -53,8 +53,8 @@ export default function Header() {
                     <a href="/#inicio" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Inicio</a>
                     <a href="/#info" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Info</a>
                     <a href="/#tarifas" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Tarifas</a>
-                    <a href="/#la-manga" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">La Manga del Mar Menor</a>
                     <a href="/#ficha-tecnica" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Ficha Técnica</a>
+                    <a href="/la-manga" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">La Manga del Mar Menor</a>
                     <a href="/preguntas-frecuentes" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Preguntas Frecuentes</a>
                     <a href="/contacto" onClick={() => setMenuOpen(false)} className="py-3 border-b border-white/20">Contacto</a>
                     <div className="flex gap-4 pt-4 text-azul-oscuro">

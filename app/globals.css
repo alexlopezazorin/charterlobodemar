@@ -51,16 +51,16 @@ body {
   box-shadow: 0 20px 60px -10px rgba(0,0,0,0.4);
 }
 
+.opinion-card {
+    box-shadow: 0 10px 40px -8px rgba(0,0,0,0.25);
+}
+
 @keyframes ticker {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
 
 .ticker-track {
-    animation: ticker 50s linear infinite;
+    animation: ticker linear infinite;
     width: max-content;
-}
-
-.ticker-track:hover {
-    animation-play-state: paused;
 }
