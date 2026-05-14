@@ -38,7 +38,7 @@ export default function InstagramSection() {
             };
             const maxCardH = getCardW(6) * 1.135;
             const headerH = isMobile ? 88 : 112;
-            const topPx = Math.max(headerH + 90, (window.innerHeight - (maxCardH + (N - 1) * DELTA)) / 2);
+            const topPx = Math.max(headerH + (isMobile ? 130 : 90), (window.innerHeight - (maxCardH + (N - 1) * DELTA)) / 2);
 
             let n = 0;
             for (let e = 1; e < N; e++) {

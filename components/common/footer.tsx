@@ -5,7 +5,7 @@ import WhatsappIcon from '@/public/whatsapp-logo.svg'
 
 export default function Footer() {
     return (
-        <footer>
+        <footer className="bg-azul-oscuro">
 
             <div className="bg-azul-oscuro grid grid-cols-1 md:grid-cols-3 px-[10%] gap-x-[10%] gap-y-6 py-6 pb-10 md:pb-6">
 

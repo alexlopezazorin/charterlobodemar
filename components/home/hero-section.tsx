@@ -24,7 +24,7 @@ export default function HeroSection() {
 
                 {/* Subtítulo */}
                 <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10">
-                    Vive una experiencia única a bordo de Katmandú, con patrón incluido. Grupos de hasta <strong>6 personas</strong> desde el <strong>Puerto Tomás Maestre - <span className="text-acento font-black text-xl md:text-2xl">La Manga</span></strong>.
+                    Experiencia única con patrón incluido. Grupos de hasta <strong>6 personas</strong> desde el <strong>Puerto Tomás Maestre - <span className="text-acento font-black text-xl md:text-2xl">La Manga del Mar Menor</span></strong>.
                 </p>
 
                 {/* Botones */}

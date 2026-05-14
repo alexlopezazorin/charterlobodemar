@@ -290,7 +290,7 @@ export default function OpinionesSection() {
                 <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white to-transparent" />
                 <div
                     ref={containerRef}
-                    className="overflow-x-hidden no-scrollbar select-none cursor-grab active:cursor-grabbing"
+                    className="overflow-x-hidden no-scrollbar select-none cursor-grab active:cursor-grabbing pb-4"
                     style={{ touchAction: 'pan-y' }}
                     onMouseDown={onMouseDown}
                     onTouchStart={onTouchStart}

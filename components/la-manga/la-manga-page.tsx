@@ -1,52 +1,6 @@
 import Link from "next/link";
-
-const locations = [
-    {
-        src: "/home/la-manga/calblanque.png",
-        label: "Parque Natural Calblanque",
-        description: "Playas vírgenes de arena fina y aguas turquesas en un entorno protegido. Ideal para el snorkel y el baño en plena naturaleza.",
-    },
-    {
-        src: "/home/la-manga/farallon.png",
-        label: "Islote del Farallón",
-        description: "Pequeño islote volcánico con aguas de una claridad excepcional. Un enclave único para fondear y explorar el fondo marino.",
-    },
-    {
-        src: "/home/la-manga/cala_cerrada.png",
-        label: "Cala Cerrada",
-        description: "Cala de difícil acceso por tierra, solo alcanzable desde el mar. Aguas protegidas y tranquilas rodeadas de acantilados.",
-    },
-    {
-        src: "/home/la-manga/azohia.png",
-        label: "Playa de la Azohía",
-        description: "Amplia bahía con fondo de arena fina y aguas calm as bajo la sombra del castillo de Cope. Un rincón apartado del turismo masivo.",
-    },
-    {
-        src: "/home/la-manga/isla_del_baron.png",
-        label: "Isla del Barón",
-        description: "Isla deshabitada en el corazón del Mar Menor. Perfecta para fondear y disfrutar de las aguas más cálidas y transparentes del litoral.",
-    },
-    {
-        src: "/home/la-manga/playa_del_estacio.png",
-        label: "Playa del Estacio",
-        description: "El paso que une el Mar Menor y el Mediterráneo. Un paisaje único donde conviven dos mundos marinos con carácter completamente distinto.",
-    },
-    {
-        src: "/home/la-manga/faro_cabo_de_palos.png",
-        label: "Faro Cabo de Palos",
-        description: "El punto más emblemático de La Manga. Vistas panorámicas al Mediterráneo y aguas con una diversidad marina extraordinaria.",
-    },
-    {
-        src: "/home/la-manga/isla_grosa.png",
-        label: "Isla Grosa",
-        description: "La mayor isla del Mar Menor, reserva natural con flora y fauna endémica. Un destino imprescindible para los amantes de la naturaleza.",
-    },
-    {
-        src: "/home/la-manga/perdiguera.png",
-        label: "Isla Perdiguera",
-        description: "La joya del Mar Menor: playas de arena blanca, aguas cálidas y una paz difícil de encontrar en tierra. El lugar preferido de nuestros clientes.",
-    },
-];
+import LaMangaCarousel from "./la-manga-carousel";
+import { locations } from "./la-manga-data";
 
 export default function LaMangaPage() {
     return (
@@ -85,34 +39,40 @@ export default function LaMangaPage() {
             </div>
 
             {/* Galería */}
-            <section className="py-16 px-6">
-                <div className="max-w-6xl mx-auto">
+            <section className="py-16 md:px-6">
+                <div className="max-w-6xl mx-auto px-6 md:px-0 mb-10">
                     <h2 className="text-azul-oscuro text-3xl font-bold mb-2">Nuestras paradas favoritas</h2>
-                    <p className="text-gris-claro mb-10">Cada ruta es diferente, pero estos son los lugares que nunca fallan.</p>
+                    <p className="text-gris-claro">Cada ruta es diferente, pero estos son los lugares que nunca fallan.</p>
+                </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {locations.map((loc, i) => (
-                            <div
-                                key={loc.src}
-                                className={`group rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-shadow duration-300 ${
-                                    i === locations.length - 1 && locations.length % 3 === 1
-                                        ? "sm:col-span-2 lg:col-span-1"
-                                        : ""
-                                }`}
-                            >
-                                <img
-                                    src={loc.src}
-                                    alt={loc.label}
-                                    className="w-full block group-hover:scale-105 transition-transform duration-500"
-                                    loading={i < 3 ? "eager" : "lazy"}
-                                />
-                                <div className="p-5 bg-white">
-                                    <h3 className="font-bold text-gris-oscuro text-base mb-1">{loc.label}</h3>
-                                    <p className="text-gris-claro text-sm leading-relaxed">{loc.description}</p>
-                                </div>
+                {/* Mobile: carrusel automático */}
+                <div className="md:hidden">
+                    <LaMangaCarousel />
+                </div>
+
+                {/* Desktop: grid original */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    {locations.map((loc, i) => (
+                        <div
+                            key={loc.src}
+                            className={`rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.1)] ${
+                                i === locations.length - 1 && locations.length % 3 === 1
+                                    ? "lg:col-span-1"
+                                    : ""
+                            }`}
+                        >
+                            <img
+                                src={loc.src}
+                                alt={loc.label}
+                                className="w-full block"
+                                loading={i < 3 ? "eager" : "lazy"}
+                            />
+                            <div className="p-5 bg-white">
+                                <h3 className="font-bold text-gris-oscuro text-base mb-1">{loc.label}</h3>
+                                <p className="text-gris-claro text-sm leading-relaxed">{loc.description}</p>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </section>
 
