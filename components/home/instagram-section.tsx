@@ -10,9 +10,12 @@ const images = [
     { src: "/home/instagram/6.png", alt: "Foto de Instagram 6" },
     { src: "/home/instagram/7.png", alt: "Foto de Instagram 7" },
     { src: "/home/instagram/8.png", alt: "Foto de Instagram 8" },
+    { src: "/home/instagram/9.png", alt: "Foto de Instagram 9" },
+    { src: "/home/instagram/10.png", alt: "Foto de Instagram 10" },
+    { src: "/home/instagram/11.png", alt: "Foto de Instagram 11" },
 ];
 
-const ROTATIONS = [-2.5, 1.8, -1.2, 2.2, -1.8, 1.2, -2.0, 1.5];
+const ROTATIONS = [-2.5, 1.8, -1.2, 2.2, -1.8, 1.2, -2.0, 1.5, -2.3, 1.6, -1.0];
 
 export default function InstagramSection() {
     const containerRef = useRef<HTMLDivElement>(null);

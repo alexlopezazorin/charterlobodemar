@@ -1,15 +1,40 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import FacebookIcon from '@/public/facebook-logo.svg'
 import InstagramIcon from '@/public/instagram-logo.svg'
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false)
+    const pathname = usePathname()
+    const isHome = pathname === '/'
+    const [visible, setVisible] = useState(() => pathname !== '/')
+    const [ready, setReady] = useState(false)
+
+    useEffect(() => {
+        if (!isHome) {
+            setVisible(true)
+            return
+        }
+
+        setReady(true)
+
+        setVisible(false)
+
+        const onScroll = () => {
+            const hero = document.getElementById('inicio')
+            if (!hero) return
+            setVisible(hero.getBoundingClientRect().bottom <= hero.offsetHeight * 0.75)
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [pathname])
 
     return(
-        <header className="sticky md:fixed top-0 left-0 w-full z-50 bg-azul-claro shadow-md">
+        <header className={`${isHome ? 'fixed' : 'sticky md:fixed'} top-0 left-0 w-full z-50 bg-azul-claro shadow-md ${isHome && ready ? 'transition-transform duration-300' : ''} ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             {/* Desktop */}
             <div className="hidden md:flex items-center justify-between px-8 py-4">
 

@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const images = [
-    { src: "/home/info/patron.png",   alt: "Juan Carlos, patrón de Katmandú" },
+    { src: "/home/info/patron.png",   alt: "Clientes saltando desde Katmandú" },
     { src: "/home/info/barco.png",    alt: "Puesta de Sol desde velero Katmandú" },
     { src: "/home/info/clientes.png", alt: "Clientes disfrutando a bordo" },
 ];
@@ -15,136 +15,25 @@ const stats = [
 ];
 
 export default function InfoSection() {
-    const containerRef = useRef<HTMLDivElement>(null);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [mobileIndex, setMobileIndex] = useState(0);
+    const swipeStartX = useRef(0);
+    const hasSwiped = useRef(false);
 
-    const isPaused = useRef(false);
-    const isModalOpen = useRef(false);
-    const isDragging = useRef(false);
-    const hasDragged = useRef(false);
-    const dragStartX = useRef(0);
-    const scrollStart = useRef(0);
-    const rafRef = useRef<number | null>(null);
-    const velocity = useRef(0);
-    const momentum = useRef(false);
-    const lastPointerX = useRef(0);
-    const lastPointerTime = useRef(0);
-
-    useEffect(() => {
-        isModalOpen.current = selectedIndex !== null;
-        isPaused.current = selectedIndex !== null;
-    }, [selectedIndex]);
-
-    // Auto scroll
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
-
-        const tick = () => {
-            const half = container.scrollWidth / 2;
-            if (momentum.current && Math.abs(velocity.current) > 0.05) {
-                container.scrollLeft += velocity.current * 16;
-                velocity.current *= 0.93;
-                if (container.scrollLeft >= half) container.scrollLeft -= half;
-                if (container.scrollLeft < 0) container.scrollLeft += half;
-            } else if (momentum.current) {
-                momentum.current = false;
-                velocity.current = 0;
-            } else if (!isPaused.current) {
-                container.scrollLeft += 1;
-                if (container.scrollLeft >= half) container.scrollLeft -= half;
-            }
-            rafRef.current = requestAnimationFrame(tick);
-        };
-
-        rafRef.current = requestAnimationFrame(tick);
-        return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current); };
-    }, []);
-
-    // Mouse drag
-    const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-        isDragging.current = true;
-        hasDragged.current = false;
-        momentum.current = false;
-        velocity.current = 0;
-        isPaused.current = true;
-        dragStartX.current = e.clientX;
-        scrollStart.current = containerRef.current?.scrollLeft ?? 0;
-        lastPointerX.current = e.clientX;
-        lastPointerTime.current = performance.now();
-        e.preventDefault();
+    // Mobile carousel swipe
+    const onTouchStart = (e: React.TouchEvent) => {
+        swipeStartX.current = e.touches[0].clientX;
+        hasSwiped.current = false;
     };
 
-    const onMouseMove = useCallback((e: MouseEvent) => {
-        if (!isDragging.current || !containerRef.current) return;
-        const dx = e.clientX - dragStartX.current;
-        if (Math.abs(dx) > 4) hasDragged.current = true;
-        const container = containerRef.current;
-        const half = container.scrollWidth / 2;
-        let newLeft = scrollStart.current - dx;
-        if (newLeft >= half) newLeft -= half;
-        if (newLeft < 0) newLeft += half;
-        container.scrollLeft = newLeft;
-        const now = performance.now();
-        const dt = now - lastPointerTime.current;
-        if (dt > 0 && dt < 100) {
-            velocity.current = Math.max(-15, Math.min(15, -(e.clientX - lastPointerX.current) / dt));
+    const onTouchEnd = (e: React.TouchEvent) => {
+        const dx = swipeStartX.current - e.changedTouches[0].clientX;
+        if (Math.abs(dx) > 40) {
+            hasSwiped.current = true;
+            setMobileIndex(prev =>
+                dx > 0 ? Math.min(prev + 1, images.length - 1) : Math.max(prev - 1, 0)
+            );
         }
-        lastPointerX.current = e.clientX;
-        lastPointerTime.current = now;
-    }, []);
-
-    const onMouseUp = useCallback(() => {
-        if (!isDragging.current) return;
-        isDragging.current = false;
-        if (!isModalOpen.current && Math.abs(velocity.current) > 0.1) momentum.current = true;
-        isPaused.current = isModalOpen.current;
-    }, []);
-
-    useEffect(() => {
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('mouseup', onMouseUp);
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('mouseup', onMouseUp);
-        };
-    }, [onMouseMove, onMouseUp]);
-
-    // Touch drag
-    const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-        hasDragged.current = false;
-        momentum.current = false;
-        velocity.current = 0;
-        isPaused.current = true;
-        dragStartX.current = e.touches[0].clientX;
-        scrollStart.current = containerRef.current?.scrollLeft ?? 0;
-        lastPointerX.current = e.touches[0].clientX;
-        lastPointerTime.current = performance.now();
-    };
-
-    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-        if (!containerRef.current) return;
-        const touch = e.touches[0];
-        const dx = touch.clientX - dragStartX.current;
-        if (Math.abs(dx) > 4) hasDragged.current = true;
-        const container = containerRef.current;
-        const half = container.scrollWidth / 2;
-        let newLeft = scrollStart.current - dx;
-        if (newLeft >= half) newLeft -= half;
-        if (newLeft < 0) newLeft += half;
-        container.scrollLeft = newLeft;
-        const now = performance.now();
-        const dt = now - lastPointerTime.current;
-        if (dt > 0 && dt < 100) {
-            velocity.current = Math.max(-15, Math.min(15, -(touch.clientX - lastPointerX.current) / dt));
-        }
-        lastPointerX.current = touch.clientX;
-        lastPointerTime.current = now;
-    };
-
-    const onTouchEnd = () => {
-        if (!isModalOpen.current && Math.abs(velocity.current) > 0.1) momentum.current = true;
-        isPaused.current = isModalOpen.current;
     };
 
     // Modal swipe
@@ -164,7 +53,7 @@ export default function InfoSection() {
         e.stopPropagation();
     };
 
-    // Keyboard navigation
+    // Keyboard navigation for modal
     useEffect(() => {
         if (selectedIndex === null) return;
         const onKey = (e: KeyboardEvent) => {
@@ -176,7 +65,6 @@ export default function InfoSection() {
         return () => window.removeEventListener('keydown', onKey);
     }, [selectedIndex]);
 
-    const doubled = [...images, ...images];
     const selected = selectedIndex !== null ? images[selectedIndex] : null;
 
     return (
@@ -185,25 +73,40 @@ export default function InfoSection() {
 
                 <div className="flex flex-col md:flex-row md:justify-center md:gap-2 gap-12">
 
-                    {/* Mobile ticker */}
+                    {/* Mobile: swipe carousel */}
                     <div className="order-2 md:order-none md:hidden -mx-4">
                         <div
-                            ref={containerRef}
-                            className="flex gap-3 px-4 overflow-x-hidden no-scrollbar select-none cursor-grab active:cursor-grabbing"
+                            className="overflow-hidden"
                             style={{ width: '100vw', touchAction: 'pan-y' }}
-                            onMouseDown={onMouseDown}
                             onTouchStart={onTouchStart}
-                            onTouchMove={onTouchMove}
                             onTouchEnd={onTouchEnd}
                         >
-                            {doubled.map((img, i) => (
-                                <div
+                            <div
+                                className="flex transition-transform duration-300 ease-in-out"
+                                style={{ transform: `translateX(-${mobileIndex * 100}vw)` }}
+                            >
+                                {images.map((img, i) => (
+                                    <div
+                                        key={i}
+                                        className="relative flex-shrink-0 aspect-[9/7] rounded-2xl overflow-hidden px-4"
+                                        style={{ width: '100vw' }}
+                                        onClick={() => { if (!hasSwiped.current) setSelectedIndex(i); }}
+                                    >
+                                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover rounded-2xl" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Dots */}
+                        <div className="flex justify-center gap-2 mt-3">
+                            {images.map((_, i) => (
+                                <button
                                     key={i}
-                                    className="relative flex-shrink-0 w-72 aspect-[9/7] rounded-2xl overflow-hidden cursor-pointer"
-                                    onClick={() => { if (!hasDragged.current) setSelectedIndex(i % images.length); }}
-                                >
-                                    <img src={img.src} alt={img.alt} className="absolute inset-0 w-full h-full object-cover" />
-                                </div>
+                                    onClick={() => setMobileIndex(i)}
+                                    className={`rounded-full transition-all duration-200 ${i === mobileIndex ? 'w-4 h-2 bg-azul-oscuro' : 'w-2 h-2 bg-azul-oscuro/30'}`}
+                                    aria-label={`Foto ${i + 1}`}
+                                />
                             ))}
                         </div>
                     </div>
@@ -283,21 +186,18 @@ export default function InfoSection() {
                         onTouchStart={onModalTouchStart}
                         onTouchEnd={onModalTouchEnd}
                     >
-                        {/* Close */}
                         <button
                             onClick={() => setSelectedIndex(null)}
                             className="absolute -top-10 right-0 text-white/70 hover:text-white w-8 h-8 flex items-center justify-center text-lg transition-colors"
                             aria-label="Cerrar"
                         >✕</button>
 
-                        {/* Prev */}
                         <button
                             onClick={() => setSelectedIndex(p => p !== null ? (p - 1 + images.length) % images.length : null)}
                             className="absolute left-2 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-colors text-3xl leading-none"
                             aria-label="Anterior"
                         >‹</button>
 
-                        {/* Next */}
                         <button
                             onClick={() => setSelectedIndex(p => p !== null ? (p + 1) % images.length : null)}
                             className="absolute right-2 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/50 transition-colors text-3xl leading-none"
@@ -310,10 +210,8 @@ export default function InfoSection() {
                             className="w-full rounded-2xl object-cover"
                         />
 
-                        {/* Alt text */}
                         <p className="text-white/60 text-sm text-center mt-3">{selected.alt}</p>
 
-                        {/* Dots */}
                         <div className="flex justify-center gap-2 mt-4">
                             {images.map((_, i) => (
                                 <button

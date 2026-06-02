@@ -1,23 +1,15 @@
 export default function HeroSection() {
     return (
-        <section id="inicio" className="scroll-mt-[88px] md:scroll-mt-28 relative min-h-[calc(100vh-5.5rem)] md:min-h-[calc(100vh-7rem)] flex items-center justify-center overflow-hidden">
+        <section id="inicio" className="scroll-mt-[88px] md:scroll-mt-28 relative min-h-screen md:-mt-28 flex items-center justify-center overflow-hidden">
 
             {/* Imagen de fondo */}
             <img src="/home/hero-section/hero.png" alt="Katmandú navegando por La Manga" className="absolute inset-0 w-full h-full object-cover object-center" />
 
-            {/* Overlay oscuro para legibilidad del texto */}
+            {/* Overlay gris */}
+            <div className="absolute inset-0 bg-gray-500/35" />
 
             {/* Contenido */}
             <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-1.5 text-sm mb-8">
-                    <span className="relative flex w-1.5 h-1.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-acento opacity-75" />
-                        <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-acento" />
-                    </span>
-                    Charter privado · La Manga del Mar Menor
-                </div>
 
                 {/* Título */}
                 <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 leading-tight">
@@ -26,7 +18,7 @@ export default function HeroSection() {
                 </h1>
 
                 {/* Subtítulo */}
-                <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10">
+                <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10">
                     Charter con patrón incluido desde el <strong>Puerto Tomás Maestre</strong><br /><span className="text-acento font-black text-xl md:text-2xl">La Manga del Mar Menor</span>
                 </p>
 
