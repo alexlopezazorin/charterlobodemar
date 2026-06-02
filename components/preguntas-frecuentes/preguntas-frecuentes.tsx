@@ -17,7 +17,7 @@ export default function PreguntasFrecuentes() {
                         </div>
                         <div className="w-[85%]">
                             <h2 className="text-base font-semibold text-azul-oscuro mb-2">¿QUÉ INCLUYE EL ALQUILER DEL BARCO?</h2>
-                            <p className="text-sm text-gris-claro leading-relaxed">El alquiler incluye la embarcación equipada con todo el material de seguridad obligatorio además de sus seguros correspondientes, patrón con más de 5 años de experiencia y combustible (hasta 2h de navegación). Además el velero dispone de solárium premium en proa, nevera Igloo en la cubierta para tus bebidas, zonas de sombreado y colchonetas en cockpit, tabla de Paddle Surf, plataforma de baño en popa, ducha agua dulce, gafas de esnórquel y altavoz bluetooth para conectar tu tlf y escuchar tu música.</p>
+                            <p className="text-sm text-gris-claro leading-relaxed">El alquiler incluye la embarcación equipada con todo el material de seguridad obligatorio además de sus seguros correspondientes, patrón con más de 7 años de experiencia y combustible (hasta 2h de navegación). Además el velero dispone de solárium premium en proa, nevera Igloo en la cubierta para tus bebidas, zonas de sombreado y colchonetas en cockpit, tabla de Paddle Surf, plataforma de baño en popa, ducha agua dulce, gafas de esnórquel y altavoz bluetooth para conectar tu tlf y escuchar tu música.</p>
                         </div>
                     </div>
 

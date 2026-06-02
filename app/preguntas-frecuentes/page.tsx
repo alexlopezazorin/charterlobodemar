@@ -24,7 +24,7 @@ const jsonLdFaq = {
       "name": "¿Qué incluye el alquiler del barco?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El alquiler incluye la embarcación equipada con todo el material de seguridad obligatorio además de sus seguros correspondientes, patrón con más de 5 años de experiencia y combustible (hasta 2h de navegación). Además el velero dispone de solárium premium en proa, nevera Igloo en la cubierta para tus bebidas, zonas de sombreado y colchonetas en cockpit, tabla de Paddle Surf, plataforma de baño en popa, ducha agua dulce, gafas de esnórquel y altavoz bluetooth.",
+        "text": "El alquiler incluye la embarcación equipada con todo el material de seguridad obligatorio además de sus seguros correspondientes, patrón con más de 7 años de experiencia y combustible (hasta 2h de navegación). Además el velero dispone de solárium premium en proa, nevera Igloo en la cubierta para tus bebidas, zonas de sombreado y colchonetas en cockpit, tabla de Paddle Surf, plataforma de baño en popa, ducha agua dulce, gafas de esnórquel y altavoz bluetooth.",
       },
     },
     {

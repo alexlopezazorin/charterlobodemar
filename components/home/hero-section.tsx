@@ -12,19 +12,22 @@ export default function HeroSection() {
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 rounded-full px-4 py-1.5 text-sm mb-8">
-                    <span className="w-1.5 h-1.5 rounded-full bg-acento inline-block" />
+                    <span className="relative flex w-1.5 h-1.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-acento opacity-75" />
+                        <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-acento" />
+                    </span>
                     Charter privado · La Manga del Mar Menor
                 </div>
 
                 {/* Título */}
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                    Navega por el<br />
-                    <span className="text-acento">Mar Menor</span>
+                <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 leading-tight">
+                    Desconecta de la rutina...<br />
+                    <span className="text-acento md:whitespace-nowrap">¡Navega hacia la aventura!</span>
                 </h1>
 
                 {/* Subtítulo */}
                 <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10">
-                    Experiencia única con patrón incluido. Grupos de hasta <strong>6 personas</strong> desde el <strong>Puerto Tomás Maestre - <span className="text-acento font-black text-xl md:text-2xl">La Manga del Mar Menor</span></strong>.
+                    Charter con patrón incluido desde el <strong>Puerto Tomás Maestre</strong><br /><span className="text-acento font-black text-xl md:text-2xl">La Manga del Mar Menor</span>
                 </p>
 
                 {/* Botones */}

@@ -9,7 +9,7 @@ const images = [
 ];
 
 const stats = [
-    { value: "5+",   label: "Años de experiencia del patrón" },
+    { value: "7+",   label: "Años de experiencia del patrón" },
     { value: "+100", label: "Clientes satisfechos" },
     { value: "100%", label: "Reseñas de 5 estrellas" },
 ];
@@ -221,7 +221,7 @@ export default function InfoSection() {
                     <div className="order-1 md:order-none flex flex-col gap-6 md:max-w-lg">
                         <div className="pl-14">
                             <p className="text-acento font-semibold text-sm uppercase tracking-wider mb-2">Charter Lobo de Mar</p>
-                            <h2 className="text-azul-oscuro text-xl md:text-4xl font-bold leading-tight mb-4">Desconecta de la rutina...<br />Navega hacia la aventura</h2>
+                            <h2 className="text-azul-oscuro text-xl md:text-4xl font-bold leading-tight mb-4">Tu mejor escapada<br />en el Mar Menor</h2>
                             <p className="text-gris-claro font-semibold mb-3">Rutas a medida y toda la magia del mar.</p>
                             <p className="text-gris-claro">Con Lobo de Mar, cada travesía es una experiencia pensada para ti. Puedes convertir cualquier ocasión en un recuerdo inolvidable.</p>
                             <p className="text-gris-claro mt-3">Solo te tienes que preocupar de disfrutar en alta mar, con estilo, tranquilidad y vistas únicas, ¡nosotros hacemos el resto!</p>

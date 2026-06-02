@@ -79,6 +79,7 @@ export default function TarifasSection() {
                             <div className="text-center">
                                 <h3 className="text-azul-oscuro text-2xl font-bold">{tarifa.temporada}</h3>
                                 <p className="text-gris-claro text-sm mt-1">{tarifa.periodo}</p>
+                                <p className="text-gris-claro text-sm mt-1">Grupos de hasta <strong>6 personas</strong></p>
                             </div>
 
                             <div className="flex flex-col divide-y divide-gray-100">

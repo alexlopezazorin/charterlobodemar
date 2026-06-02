@@ -1,5 +1,5 @@
 const serviciosIncluidos = [
-    { src: "/home/servicios-incluidos/patron.png", alt: "Patron profesional", label: "Patrón profesional", info: "Más de 5 años de experiencia" },
+    { src: "/home/servicios-incluidos/patron.png", alt: "Patron profesional", label: "Patrón profesional", info: "Más de 7 años de experiencia" },
     { src: "/home/servicios-incluidos/material_de_seguridad.png", alt: "Material de seguridad", label: "Material de Seguridad", info: "Homologado y revisado" },
     { src: "/home/servicios-incluidos/seguro_de_pasajeros.png", alt: "Seguro de pasajeros", label: "Seguro de pasajeros", info: "Cobertura total a bordo" },
     { src: "/home/servicios-incluidos/chalecos.png", alt: "Chalecos salvavidas", label: "Chalecos salvavidas", info: "Tallas para niños 10-15kg y 15-40kg" },

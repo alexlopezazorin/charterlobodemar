@@ -12,7 +12,8 @@ export default function Contacto() {
         e.preventDefault();
         setEnviando(true);
         setError(false);
-        const data = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+        const data = new FormData(form);
 
         try {
             const res = await fetch("/api/contacto", {
@@ -25,7 +26,7 @@ export default function Contacto() {
                 }),
             });
             if (!res.ok) throw new Error();
-            e.currentTarget.reset();
+            form.reset();
             setEnviado(true);
             setTimeout(() => setEnviado(false), 7000);
         } catch {
