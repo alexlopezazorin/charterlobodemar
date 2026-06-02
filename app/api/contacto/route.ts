@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
         from: `"Charter Lobo de Mar" <${process.env.GMAIL_USER}>`,
         to: process.env.GMAIL_TO,
-        subject: `Nueva consulta de ${nombre}`,
+        subject: `Nueva Consulta en charterlobodemar.es`,
         html: `
             <h2>Nueva consulta desde la web</h2>
             <p><strong>Nombre:</strong> ${nombre}</p>
