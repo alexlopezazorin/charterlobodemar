@@ -5,19 +5,34 @@ import Link from "next/link";
 
 export default function Contacto() {
     const [enviado, setEnviado] = useState(false);
+    const [enviando, setEnviando] = useState(false);
+    const [error, setError] = useState(false);
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        setEnviando(true);
+        setError(false);
         const data = new FormData(e.currentTarget);
-        console.log("Datos del formulario:", {
-            nombre: data.get("nombre"),
-            email: data.get("email"),
-            mensaje: data.get("mensaje"),
-            privacidad: data.get("privacidad") === "on",
-        });
-        e.currentTarget.reset();
-        setEnviado(true);
-        setTimeout(() => setEnviado(false), 7000);
+
+        try {
+            const res = await fetch("/api/contacto", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    nombre: data.get("nombre"),
+                    email: data.get("email"),
+                    mensaje: data.get("mensaje"),
+                }),
+            });
+            if (!res.ok) throw new Error();
+            e.currentTarget.reset();
+            setEnviado(true);
+            setTimeout(() => setEnviado(false), 7000);
+        } catch {
+            setError(true);
+        } finally {
+            setEnviando(false);
+        }
     }
 
     return (
@@ -97,13 +112,19 @@ export default function Contacto() {
                             </span>
                         </label>
 
-                        <button type="submit" className="mt-1 bg-[#f09a00] hover:bg-[#d88800] active:bg-[#c07a00] text-white font-bold py-3.5 px-6 rounded-xl transition-colors cursor-pointer text-base tracking-wide shadow-sm">
-                            Enviar consulta
+                        <button type="submit" disabled={enviando} className="mt-1 bg-[#f09a00] hover:bg-[#d88800] active:bg-[#c07a00] disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold py-3.5 px-6 rounded-xl transition-colors cursor-pointer text-base tracking-wide shadow-sm">
+                            {enviando ? "Enviando..." : "Enviar consulta"}
                         </button>
 
                         {enviado && (
                             <div className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3 text-sm font-medium">
                                 <span className="text-lg">✓</span> ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.
+                            </div>
+                        )}
+
+                        {error && (
+                            <div className="flex items-center gap-2 text-red-700 bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm font-medium">
+                                <span className="text-lg">✕</span> Ha ocurrido un error. Por favor, inténtalo de nuevo o contacta por WhatsApp.
                             </div>
                         )}
 
