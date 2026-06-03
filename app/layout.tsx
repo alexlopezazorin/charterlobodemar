@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     template: "%s | Lobo de Mar - Charter La Manga",
   },
   description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas desde el Puerto Tomás Maestre. Snorkel, puesta de sol, fondeo. ¡Reserva ya!",
+  icons: {
+    icon: "/logo.png",
+  },
   keywords: [
     "charter barco La Manga",
     "alquiler velero La Manga del Mar Menor",
