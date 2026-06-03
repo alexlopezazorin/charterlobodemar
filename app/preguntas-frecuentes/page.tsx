@@ -90,6 +90,14 @@ export const metadata: Metadata = {
     title: "Preguntas Frecuentes sobre Alquiler de Barco en La Manga | Charter Lobo de Mar",
     description: "Resolvemos todas tus dudas sobre el alquiler de velero en La Manga: qué incluye, desde dónde zarpar, rutas recomendadas y más.",
     url: `${SITE_URL}/preguntas-frecuentes`,
+    images: [
+      {
+        url: "/home/hero-section/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Charter Lobo de Mar — Preguntas Frecuentes sobre Alquiler de Velero",
+      },
+    ],
   },
 };
 

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     title: "Charter Velero La Manga del Mar Menor | Alquiler con Patrón",
     description: "Alquila un velero con patrón en La Manga. Excursiones privadas, snorkel, puesta de sol. Grupos hasta 6 personas desde 200€.",
     url: SITE_URL,
+    images: [
+      {
+        url: "/home/hero-section/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Charter Lobo de Mar — Velero Katmandú navegando por La Manga del Mar Menor",
+      },
+    ],
   },
 };
 

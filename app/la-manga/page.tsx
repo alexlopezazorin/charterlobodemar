@@ -94,6 +94,14 @@ export const metadata: Metadata = {
     title: "Qué Ver en La Manga del Mar Menor desde el Mar | Charter Velero",
     description: "Descubre Calblanque, Isla Perdiguera, Cabo de Palos, Isla Grosa desde el mar. Rutas en velero con snorkel.",
     url: `${SITE_URL}/la-manga`,
+    images: [
+      {
+        url: "/home/hero-section/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "La Manga del Mar Menor — Descubre los mejores fondeos desde tu velero",
+      },
+    ],
   },
 };
 

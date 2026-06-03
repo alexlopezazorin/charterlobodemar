@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     title: "Reserva tu Excursión en Velero La Manga | Charter Lobo de Mar",
     description: "Reserva tu charter privado. Contacta por WhatsApp o formulario. Respuesta rápida.",
     url: `${SITE_URL}/contacto`,
+    images: [
+      {
+        url: "/home/hero-section/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Charter Lobo de Mar — Reserva tu velero en La Manga del Mar Menor",
+      },
+    ],
   },
 };
 
