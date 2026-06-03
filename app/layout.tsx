@@ -13,19 +13,27 @@ export const SITE_URL = "https://charterlobodemar.es";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Charter Barco La Manga del Mar Menor | Lobo de Mar",
-    template: "%s | Charter Lobo de Mar",
+    default: "Charter Velero La Manga del Mar Menor | Alquiler con Patrón | Lobo de Mar",
+    template: "%s | Lobo de Mar - Charter La Manga",
   },
-  description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas desde el Puerto Tomás Maestre, Murcia. ¡Reserva ya!",
+  description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas desde el Puerto Tomás Maestre. Snorkel, puesta de sol, fondeo. ¡Reserva ya!",
   keywords: [
     "charter barco La Manga",
     "alquiler velero La Manga del Mar Menor",
+    "velero con patrón La Manga",
     "excursión barco Mar Menor",
-    "charter privado con patrón",
-    "velero grupos Murcia",
+    "charter privado grupos La Manga",
+    "velero groups Murcia",
     "charter velero Cabo de Palos",
-    "barco con patrón La Manga",
+    "alquiler barco Puerto Tomás Maestre",
     "excursión velero La Manga",
+    "charter puesta de sol La Manga",
+    "navegación snorkel Mar Menor",
+    "fondeo barco La Manga",
+    "velero familias La Manga",
+    "charter bodas eventos La Manga",
+    "actividades mar La Manga",
+    "reserva velero Murcia",
   ],
   authors: [{ name: "alexlopezazorin@gmail.com" }],
   creator: "Charter Lobo de Mar",
@@ -35,21 +43,21 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: SITE_URL,
     siteName: "Charter Lobo de Mar",
-    title: "Charter Barco La Manga del Mar Menor | Lobo de Mar",
-    description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas desde el Puerto Tomás Maestre, Murcia.",
+    title: "Charter Velero La Manga del Mar Menor | Alquiler con Patrón",
+    description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas. Snorkel, puesta de sol, fondeo.",
     images: [
       {
         url: "/home/hero-section/hero.png",
         width: 1200,
         height: 630,
-        alt: "Charter Lobo de Mar — Velero Katmandú navegando por La Manga del Mar Menor",
+        alt: "Charter Lobo de Mar — Velero Katmandú navegando por La Manga del Mar Menor, Mar Menor, Murcia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Charter Barco La Manga del Mar Menor | Lobo de Mar",
-    description: "Alquila un velero con patrón en La Manga del Mar Menor. Grupos de hasta 6 personas desde el Puerto Tomás Maestre.",
+    title: "Charter Velero La Manga | Alquiler con Patrón | Lobo de Mar",
+    description: "Alquila un velero con patrón en La Manga. Excursiones privadas para grupos. Snorkel, puesta de sol, fondeo.",
     images: ["/home/hero-section/hero.png"],
   },
   robots: {
@@ -63,7 +71,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: SITE_URL,
   },
 };
 
@@ -73,12 +81,12 @@ const jsonLdBusiness = {
   "@id": `${SITE_URL}/#business`,
   "name": "Charter Lobo de Mar",
   "alternateName": "Lobo de Mar Charter",
-  "description": "Charter privado en velero por La Manga del Mar Menor. Excursiones con patrón incluido para grupos de hasta 6 personas desde el Puerto Tomás Maestre.",
+  "description": "Charter privado en velero por La Manga del Mar Menor. Excursiones con patrón incluido para grupos de hasta 6 personas desde el Puerto Tomás Maestre. Disponemos de snorkel, paddle surf y bar.",
   "url": SITE_URL,
   "telephone": "+34637715281",
   "email": "lobodemarcharter@gmail.com",
   "image": `${SITE_URL}/home/hero-section/hero.png`,
-  "priceRange": "€€",
+  "priceRange": "€€€",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Puerto Tomás Maestre",
@@ -98,10 +106,24 @@ const jsonLdBusiness = {
     "https://maps.app.goo.gl/7nqsUgrXmdJUkgA27",
   ],
   "hasMap": "https://maps.app.goo.gl/7nqsUgrXmdJUkgA27",
-  "areaServed": {
-    "@type": "Place",
-    "name": "La Manga del Mar Menor, Murcia, España",
-  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "La Manga del Mar Menor",
+    },
+    {
+      "@type": "Place",
+      "name": "Cabo de Palos",
+    },
+    {
+      "@type": "Place",
+      "name": "Mar Menor",
+    },
+    {
+      "@type": "Place",
+      "name": "Murcia",
+    },
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
@@ -109,6 +131,55 @@ const jsonLdBusiness = {
     "bestRating": "5",
     "worstRating": "1",
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "08:00",
+      "closes": "22:00",
+    },
+  ],
+  "knowsAbout": [
+    "Sailing Charter",
+    "Boat Rental",
+    "Water Activities",
+    "Snorkeling",
+    "Paddle Boarding",
+    "Group Excursions",
+    "Private Charter",
+    "Coastal Tours",
+  ],
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": `${SITE_URL}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "La Manga",
+      "item": `${SITE_URL}/la-manga`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Preguntas Frecuentes",
+      "item": `${SITE_URL}/preguntas-frecuentes`
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Contacto",
+      "item": `${SITE_URL}/contacto`
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -118,10 +189,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${outfit.className}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBusiness) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
         />
         <Header />
         <main className="md:pt-28">

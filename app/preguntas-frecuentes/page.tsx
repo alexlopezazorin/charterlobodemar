@@ -2,6 +2,84 @@ import type { Metadata } from "next";
 import PreguntasFrecuentes from "@/components/preguntas-frecuentes/preguntas-frecuentes";
 import { SITE_URL } from "../layout";
 
+const jsonLdService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Charter Velero La Manga del Mar Menor",
+  "description": "Servicios de charter privado en velero con patrón profesional. Excursiones por La Manga del Mar Menor, snorkel, puesta de sol y fondeo en bahías protegidas.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Charter Lobo de Mar",
+    "url": SITE_URL,
+    "telephone": "+34637715281",
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "La Manga del Mar Menor, Murcia, España",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Charter Tarifas",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Charter Day 8h",
+        "description": "Excursión completa de 8 horas. Horario a convenir con el cliente.",
+        "price": "480",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@type": "Organization",
+          "name": "Charter Lobo de Mar",
+        },
+      },
+      {
+        "@type": "Offer",
+        "name": "Charter Day 6h",
+        "description": "Excursión de 6 horas. Horario a convenir con el cliente.",
+        "price": "390",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@type": "Organization",
+          "name": "Charter Lobo de Mar",
+        },
+      },
+      {
+        "@type": "Offer",
+        "name": "Charter 4h",
+        "description": "Excursión de 4 horas. Horarios: 10:00-14:00 ó 16:00-20:00.",
+        "price": "300",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@type": "Organization",
+          "name": "Charter Lobo de Mar",
+        },
+      },
+      {
+        "@type": "Offer",
+        "name": "Charter Puesta de Sol 2h",
+        "description": "Excursión especial al atardecer. Horario: 19:30-21:30.",
+        "price": "200",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder",
+        "seller": {
+          "@type": "Organization",
+          "name": "Charter Lobo de Mar",
+        },
+      },
+    ],
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "11",
+    "bestRating": "5",
+    "worstRating": "1",
+  },
+};
+
 export const metadata: Metadata = {
   title: "Preguntas Frecuentes sobre Alquiler de Barco en La Manga",
   description: "Resolvemos todas tus dudas: qué incluye el alquiler del velero, desde dónde zarpamos, si puedes llevar comida, rutas recomendadas y más. Charter La Manga del Mar Menor.",
@@ -84,6 +162,10 @@ export default async function PreguntasFrecuentesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
       />
       <div>
         <PreguntasFrecuentes />
