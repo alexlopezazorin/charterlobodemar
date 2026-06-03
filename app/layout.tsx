@@ -18,7 +18,10 @@ export const metadata: Metadata = {
   },
   description: "Alquila un velero con patrón en La Manga del Mar Menor. Excursiones privadas para grupos de hasta 6 personas desde el Puerto Tomás Maestre. Snorkel, puesta de sol, fondeo. ¡Reserva ya!",
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/logo.png", sizes: "any" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+    ],
   },
   keywords: [
     "charter velero La Manga",
