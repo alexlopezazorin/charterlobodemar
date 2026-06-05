@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
@@ -204,6 +205,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="c596e9ae-36c2-41e5-8ead-bd3b39fd1d7d" strategy="afterInteractive" />
       </head>
       <body className={`${outfit.className}`}>
         <script
