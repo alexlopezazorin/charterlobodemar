@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CharterPage from "@/components/charter-velero/charter-page";
+import CharterPageComponent from "@/components/charter-velero/charter-page";
 import { SITE_URL } from "../layout";
 
 const jsonLdCharterService = {
@@ -102,7 +102,7 @@ export default function CharterVeleroPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCharterService) }}
       />
-      <CharterPage />
+      <CharterPageComponent />
     </>
   );
 }

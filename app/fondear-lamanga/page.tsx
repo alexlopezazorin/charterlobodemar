@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import FondearPage from "@/components/fondear-lamanga/fondear-page";
+import FondearPageComponent from "@/components/fondear-lamanga/fondear-page";
 import { SITE_URL } from "../layout";
 
 const jsonLdGuide = {
@@ -104,7 +104,7 @@ export default function FondearPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFondeoFaq) }}
       />
-      <FondearPage />
+      <FondearPageComponent />
     </>
   );
 }

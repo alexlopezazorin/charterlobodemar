@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SnorkelPage from "@/components/snorkel-velero/snorkel-page";
+import SnorkelPageComponent from "@/components/snorkel-velero/snorkel-page";
 import { SITE_URL } from "../layout";
 
 const jsonLdSnorkelFaq = {
@@ -114,7 +114,7 @@ export default function SnorkelPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdHowTo) }}
       />
-      <SnorkelPage />
+      <SnorkelPageComponent />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PreciosPage from "@/components/precios-charter/precios-page";
+import PreciosPageComponent from "@/components/precios-charter/precios-page";
 import { SITE_URL } from "../layout";
 
 const jsonLdPricing = {
@@ -145,7 +145,7 @@ export default function PreciosPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
       />
-      <PreciosPage />
+      <PreciosPageComponent />
     </>
   );
 }
