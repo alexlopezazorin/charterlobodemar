@@ -1,16 +1,16 @@
 export default function PreciosPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-azul-claro-fondo to-white">
       <section className="pt-16 pb-12 px-4 md:px-8 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-azul-oscuro mb-4">
           Precios Charter Velero La Manga | Alquiler con Patrón
         </h1>
 
-        <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+        <p className="text-xl text-gris-claro mb-8 leading-relaxed">
           Nuestros precios son <strong>transparentes, sin sorpresas</strong>. El alquiler incluye todo: velero equipado, patrón profesional, combustible, seguro, material de snorkel. No hay cargos ocultos. Desde <strong>200€ para 2 horas hasta 480€ para jornada completa</strong>.
         </p>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 mt-12">Nuestros Paquetes</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-8 mt-12">Nuestros Paquetes</h2>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Charter 2 Horas */}
@@ -21,18 +21,18 @@ export default function PreciosPage() {
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-gray-900">200<span className="text-2xl font-normal">€</span></p>
+              <p className="text-5xl font-bold text-azul-oscuro">200<span className="text-2xl font-normal">€</span></p>
               <p className="text-gray-600 text-sm mt-2">Precio por velero (no por persona)</p>
             </div>
 
             <div className="mb-6 pb-6 border-b">
-              <p className="text-gray-700 font-semibold mb-3">Horario:</p>
-              <p className="text-gray-700">19:30-21:30 (adaptable según temporada)</p>
+              <p className="text-gris-claro font-semibold mb-3">Horario:</p>
+              <p className="text-gris-claro">19:30-21:30 (adaptable según temporada)</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-gray-700 font-semibold mb-3">Incluye:</p>
-              <ul className="text-gray-700 space-y-2 text-sm">
+              <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
+              <ul className="text-gris-claro space-y-2 text-sm">
                 <li>✓ Velero Katmandú equipado</li>
                 <li>✓ Patrón profesional</li>
                 <li>✓ Combustible</li>
@@ -42,8 +42,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <p className="text-gray-700 font-semibold mb-2">Ideal para:</p>
-              <p className="text-gray-700">Parejas, pequeños grupos, experiencia romántica al atardecer</p>
+              <p className="text-gris-claro font-semibold mb-2">Ideal para:</p>
+              <p className="text-gris-claro">Parejas, pequeños grupos, experiencia romántica al atardecer</p>
             </div>
           </div>
 
@@ -55,18 +55,18 @@ export default function PreciosPage() {
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-gray-900">300<span className="text-2xl font-normal">€</span></p>
+              <p className="text-5xl font-bold text-azul-oscuro">300<span className="text-2xl font-normal">€</span></p>
               <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
             </div>
 
             <div className="mb-6 pb-6 border-b">
-              <p className="text-gray-700 font-semibold mb-3">Horarios:</p>
-              <p className="text-gray-700">10:00-14:00 ó 16:00-20:00</p>
+              <p className="text-gris-claro font-semibold mb-3">Horarios:</p>
+              <p className="text-gris-claro">10:00-14:00 ó 16:00-20:00</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-gray-700 font-semibold mb-3">Incluye:</p>
-              <ul className="text-gray-700 space-y-2 text-sm">
+              <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
+              <ul className="text-gris-claro space-y-2 text-sm">
                 <li>✓ Todo lo anterior</li>
                 <li>✓ Navegación hacia fondeos</li>
                 <li>✓ Una parada snorkel completa</li>
@@ -76,8 +76,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <p className="text-gray-700 font-semibold mb-2">Ideal para:</p>
-              <p className="text-gray-700">Familias, primeros charters, experiencia equilibrada</p>
+              <p className="text-gris-claro font-semibold mb-2">Ideal para:</p>
+              <p className="text-gris-claro">Familias, primeros charters, experiencia equilibrada</p>
             </div>
           </div>
 
@@ -89,18 +89,18 @@ export default function PreciosPage() {
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-gray-900">390<span className="text-2xl font-normal">€</span></p>
+              <p className="text-5xl font-bold text-azul-oscuro">390<span className="text-2xl font-normal">€</span></p>
               <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
             </div>
 
             <div className="mb-6 pb-6 border-b">
-              <p className="text-gray-700 font-semibold mb-3">Horario:</p>
-              <p className="text-gray-700">Flexible según grupo (ej: 09:00-15:00)</p>
+              <p className="text-gris-claro font-semibold mb-3">Horario:</p>
+              <p className="text-gris-claro">Flexible según grupo (ej: 09:00-15:00)</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-gray-700 font-semibold mb-3">Incluye:</p>
-              <ul className="text-gray-700 space-y-2 text-sm">
+              <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
+              <ul className="text-gris-claro space-y-2 text-sm">
                 <li>✓ Todo lo anterior</li>
                 <li>✓ 2-3 paradas snorkel</li>
                 <li>✓ Múltiples fondeos</li>
@@ -110,8 +110,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <p className="text-gray-700 font-semibold mb-2">Ideal para:</p>
-              <p className="text-gray-700">Grupos entusiastas, empresas, quienes quieren más tiempo</p>
+              <p className="text-gris-claro font-semibold mb-2">Ideal para:</p>
+              <p className="text-gris-claro">Grupos entusiastas, empresas, quienes quieren más tiempo</p>
             </div>
           </div>
 
@@ -126,18 +126,18 @@ export default function PreciosPage() {
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-gray-900">480<span className="text-2xl font-normal">€</span></p>
+              <p className="text-5xl font-bold text-azul-oscuro">480<span className="text-2xl font-normal">€</span></p>
               <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
             </div>
 
             <div className="mb-6 pb-6 border-b">
-              <p className="text-gray-700 font-semibold mb-3">Horario:</p>
-              <p className="text-gray-700">Flexible, ej: 08:30-16:30 (pausa comida)</p>
+              <p className="text-gris-claro font-semibold mb-3">Horario:</p>
+              <p className="text-gris-claro">Flexible, ej: 08:30-16:30 (pausa comida)</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-gray-700 font-semibold mb-3">Incluye:</p>
-              <ul className="text-gray-700 space-y-2 text-sm">
+              <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
+              <ul className="text-gris-claro space-y-2 text-sm">
                 <li>✓ Todo lo anterior</li>
                 <li>✓ 3-4 paradas snorkel</li>
                 <li>✓ Múltiples fondeos icónicos</li>
@@ -147,18 +147,18 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <p className="text-gray-700 font-semibold mb-2">Ideal para:</p>
-              <p className="text-gray-700">Experiencia inolvidable, grupos grandes, máximo disfrute</p>
+              <p className="text-gris-claro font-semibold mb-2">Ideal para:</p>
+              <p className="text-gris-claro">Experiencia inolvidable, grupos grandes, máximo disfrute</p>
             </div>
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">Lo que SIEMPRE Incluimos</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">Lo que SIEMPRE Incluimos</h2>
         <div className="bg-green-50 border-2 border-green-300 rounded-lg p-8 mb-12">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Velero y Equipo</h3>
-              <ul className="text-gray-700 space-y-2">
+              <h3 className="text-xl font-bold text-azul-oscuro mb-4">Velero y Equipo</h3>
+              <ul className="text-gris-claro space-y-2">
                 <li>✓ Velero Katmandú (11m, moderno)</li>
                 <li>✓ Velas y toda lona de navegación</li>
                 <li>✓ Motor de propulsión</li>
@@ -168,8 +168,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Seguridad y Confort</h3>
-              <ul className="text-gray-700 space-y-2">
+              <h3 className="text-xl font-bold text-azul-oscuro mb-4">Seguridad y Confort</h3>
+              <ul className="text-gris-claro space-y-2">
                 <li>✓ Chalecos salvavidas para todos</li>
                 <li>✓ Equipo de emergencia + botiquín</li>
                 <li>✓ Aro salvavidas y cuerda</li>
@@ -179,8 +179,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Snorkel y Agua</h3>
-              <ul className="text-gray-700 space-y-2">
+              <h3 className="text-xl font-bold text-azul-oscuro mb-4">Snorkel y Agua</h3>
+              <ul className="text-gris-claro space-y-2">
                 <li>✓ Gafas de snorkel ajustables</li>
                 <li>✓ Tubos de snorkel de calidad</li>
                 <li>✓ Aletas (múltiples tallas)</li>
@@ -190,8 +190,8 @@ export default function PreciosPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Extras y Servicios</h3>
-              <ul className="text-gray-700 space-y-2">
+              <h3 className="text-xl font-bold text-azul-oscuro mb-4">Extras y Servicios</h3>
+              <ul className="text-gris-claro space-y-2">
                 <li>✓ Patrón profesional 7+ años</li>
                 <li>✓ Combustible (hasta 2h nav.)</li>
                 <li>✓ Paddle surf incluido</li>
@@ -202,9 +202,9 @@ export default function PreciosPage() {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">Lo que NO Incluimos (¡Puedes Llevar!)</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">Lo que NO Incluimos (¡Puedes Llevar!)</h2>
         <div className="bg-amber-50 border-2 border-amber-300 rounded-lg p-8 mb-12">
-          <div className="text-gray-700 space-y-3">
+          <div className="text-gris-claro space-y-3">
             <p className="font-semibold">Estos artículos NO están incluidos, pero <strong>puedes traer libremente</strong>:</p>
             <ul className="space-y-2 ml-4">
               <li>🍽️ Comida y bebida (¡trae lo que quieras!)</li>
@@ -217,54 +217,54 @@ export default function PreciosPage() {
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">Preguntas sobre Precios</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">Preguntas sobre Precios</h2>
         <div className="space-y-6 mb-12">
           <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Los precios son por persona o por velero?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Los precios son por persona o por velero?</h3>
+            <p className="text-gris-claro">
               <strong>Por velero</strong>. Tú alquilas el velero completo (máximo 6 pasajeros). Si somos 2 personas, pagas 200€ y disfrutas el velero entero. Si somos 6, siguen siendo 200€ (mucho más económico por persona).
             </p>
           </div>
 
           <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Hay descuentos para grupos?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hay descuentos para grupos?</h3>
+            <p className="text-gris-claro">
               Implícitamente sí: 6 personas a 200€ son ~33€/persona. Para reservas de múltiples charters o eventos corporativos, contacta para cotización personalizada.
             </p>
           </div>
 
           <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Hay costos adicionales?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hay costos adicionales?</h3>
+            <p className="text-gris-claro">
               No. El precio es <strong>todo incluido</strong>. El combustible, seguros, patrón, equipo... todo está en el precio que ves. Sin sorpresas.
             </p>
           </div>
 
           <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Puedo cancelar o cambiar fecha?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Puedo cancelar o cambiar fecha?</h3>
+            <p className="text-gris-claro">
               Sí. Condiciones de cancelación: <strong>Cancelación 7+ días antes: 100% reembolso. Cancelación 3-6 días: 50% reembolso. Menos de 3 días: Sin reembolso</strong>. Cambios de fecha sin penalización si avisas con tiempo.
             </p>
           </div>
 
           <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Hacen ofertas o promociones?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hacen ofertas o promociones?</h3>
+            <p className="text-gris-claro">
               Ocasionalmente. Síguenos en Instagram @charterlobodemar y suscríbete a nuestro WhatsApp (+34 637 715 281) para ofertas de temporada baja.
             </p>
           </div>
 
           <div className="pb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">¿Acepta tarjeta, Bizum, o transferencia?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Acepta tarjeta, Bizum, o transferencia?</h3>
+            <p className="text-gris-claro">
               Sí a todo. Transferencia para depósito, y flexibilidad en pago final (tarjeta, Bizum, efectivo). Contacta para detalles.
             </p>
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 mt-12">¿Por Qué Nuestros Precios?</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">¿Por Qué Nuestros Precios?</h2>
         <div className="bg-blue-50 border-l-4 border-blue-500 p-8 mb-12">
-          <ul className="text-gray-700 space-y-4">
+          <ul className="text-gris-claro space-y-4">
             <li className="flex gap-4">
               <span className="text-2xl">⚙️</span>
               <div>
