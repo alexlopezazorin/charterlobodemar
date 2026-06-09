@@ -195,8 +195,8 @@ export default function PreciosPage() {
             <div>
               <h3 className="text-xl font-bold text-azul-oscuro mb-4">Extras y Servicios</h3>
               <ul className="text-gris-claro space-y-2">
-                <li>✓ Patrón profesional 7+ años</li>
-                <li>✓ Combustible (hasta 2h nav.)</li>
+                <li>✓ Patrón profesional +10 años</li>
+                <li>✓ Combustible incluido</li>
                 <li>✓ Paddle surf incluido</li>
                 <li>✓ Nevera Igloo</li>
                 <li>✓ Altavoz bluetooth</li>
@@ -210,12 +210,12 @@ export default function PreciosPage() {
           <div className="text-gris-claro space-y-3">
             <p className="font-semibold">Estos artículos NO están incluidos, pero <strong>puedes traer libremente</strong>:</p>
             <ul className="space-y-2 ml-4">
-              <li>🍽️ Comida y bebida (¡trae lo que quieras!)</li>
-              <li>☀️ Protector solar (recomendamos traer)</li>
-              <li>📷 Cámara subacuática o GoPro</li>
-              <li>🏐 Flotadores, colchonetas hinchables</li>
-              <li>🎵 Música (via bluetooth, gratuito)</li>
-              <li>👶 Artículos de bebé (pañales, biberones, etc.)</li>
+              <li>Comida y bebida (¡trae lo que quieras!)</li>
+              <li>Protector solar (recomendamos traer)</li>
+              <li>Cámara subacuática o GoPro</li>
+              <li>Flotadores, colchonetas hinchables</li>
+              <li>Música (via bluetooth, gratuito)</li>
+              <li>Artículos de bebé (pañales, biberones, etc.)</li>
             </ul>
           </div>
         </div>
