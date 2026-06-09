@@ -212,30 +212,13 @@ export default function PreciosPage() {
             <ul className="space-y-2 ml-4">
               <li>Comida y bebida (¡trae lo que quieras!)</li>
               <li>Protector solar (recomendamos traer)</li>
-              <li>Cámara subacuática o GoPro</li>
               <li>Flotadores, colchonetas hinchables</li>
-              <li>Música (via bluetooth, gratuito)</li>
-              <li>Artículos de bebé (pañales, biberones, etc.)</li>
             </ul>
           </div>
         </div>
 
         <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">Preguntas sobre Precios</h2>
         <div className="space-y-6 mb-12">
-          <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Los precios son por persona o por velero?</h3>
-            <p className="text-gris-claro">
-              <strong>Por velero</strong>. Tú alquilas el velero completo (máximo 6 pasajeros). Si somos 2 personas, pagas 200€ y disfrutas el velero entero. Si somos 6, siguen siendo 200€ (mucho más económico por persona).
-            </p>
-          </div>
-
-          <div className="border-b pb-6">
-            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hay descuentos para grupos?</h3>
-            <p className="text-gris-claro">
-              Implícitamente sí: 6 personas a 200€ son ~33€/persona. Para reservas de múltiples charters o eventos corporativos, contacta para cotización personalizada.
-            </p>
-          </div>
-
           <div className="border-b pb-6">
             <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hay costos adicionales?</h3>
             <p className="text-gris-claro">
@@ -250,44 +233,37 @@ export default function PreciosPage() {
             </p>
           </div>
 
-          <div className="border-b pb-6">
+          <div className="pb-6">
             <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Hacen ofertas o promociones?</h3>
             <p className="text-gris-claro">
-              Ocasionalmente. Síguenos en Instagram @charterlobodemar y suscríbete a nuestro WhatsApp (+34 637 715 281) para ofertas de temporada baja.
-            </p>
-          </div>
-
-          <div className="pb-6">
-            <h3 className="text-lg font-bold text-azul-oscuro mb-3">¿Acepta tarjeta, Bizum, o transferencia?</h3>
-            <p className="text-gris-claro">
-              Sí a todo. Transferencia para depósito, y flexibilidad en pago final (tarjeta, Bizum, efectivo). Contacta para detalles.
+              Ocasionalmente. Síguenos en Instagram @charterlobodemar para ofertas de temporada baja.
             </p>
           </div>
         </div>
 
         <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">¿Por Qué Nuestros Precios?</h2>
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-8 mb-12">
+        <div className="bg-azul-claro/10 border-l-4 border-acento p-8 mb-12">
           <ul className="text-gris-claro space-y-4">
             <li className="flex gap-4">
-              <span className="text-2xl">⚙️</span>
+              <div className="text-acento font-bold">●</div>
               <div>
-                <strong>Velero moderno y mantenido:</strong> El Katmandú es un velero de 11m bien cuidado, con equipamiento premium y revisiones periódicas.
+                <strong>Velero moderno y mantenido:</strong> El Katmandú está bien cuidado, con equipamiento premium y revisiones periódicas.
               </div>
             </li>
             <li className="flex gap-4">
-              <span className="text-2xl">👨‍✈️</span>
+              <div className="text-acento font-bold">●</div>
               <div>
-                <strong>Patrón profesional:</strong> 7+ años de experiencia navegando específicamente Mar Menor. Garant...
+                <strong>Patrón profesional +10 años:</strong> Experiencia navegando específicamente Mar Menor. Garantía de profesionalismo y seguridad.
               </div>
             </li>
             <li className="flex gap-4">
-              <span className="text-2xl">🛡️</span>
+              <div className="text-acento font-bold">●</div>
               <div>
-                <strong>Seguridad e Seguros:</strong> Certificación oficial, seguros de responsabilidad civil, equipo de emergencia actualizado.
+                <strong>Seguridad y Seguros:</strong> Certificación oficial, seguros de responsabilidad civil, equipo de emergencia actualizado.
               </div>
             </li>
             <li className="flex gap-4">
-              <span className="text-2xl">🌊</span>
+              <div className="text-acento font-bold">●</div>
               <div>
                 <strong>Experiencia Garantizada:</strong> Conocemos los mejores fondeos, fauna marina, y sabemos cómo hacer tu día inolvidable.
               </div>
