@@ -292,17 +292,15 @@ export default function PreciosPage() {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-8 text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4">¿Listo para Reservar?</h2>
-          <p className="text-lg mb-8">
-            Elige tu paquete, elige tu fecha, ¡y prepárate para la mejor experiencia en La Manga!
-          </p>
+        <div className="bg-gradient-to-r from-azul to-azul-claro p-8 rounded-lg text-white text-center">
+          <h2 className="text-3xl font-bold mb-3">¿Listo para tu aventura en la vela?</h2>
+          <p className="mb-6">Reserva tu charter y crea recuerdos inolvidables</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/34637715281" className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition">
-              📱 WhatsApp: +34 637 715 281
+            <a href="https://wa.me/34637715281" className="bg-white text-azul font-bold py-3 px-8 rounded-lg hover:bg-azul-claro transition-colors cursor-pointer">
+              WhatsApp: +34 637 715 281
             </a>
-            <a href="mailto:lobodemarcharter@gmail.com" className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition">
-              📧 Email: lobodemarcharter@gmail.com
+            <a href="mailto:lobodemarcharter@gmail.com" className="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
+              Email: lobodemarcharter@gmail.com
             </a>
           </div>
         </div>

@@ -69,39 +69,39 @@ export default function SnorkelPage() {
         <div className="bg-azul-claro/10 p-8 rounded-lg mb-12">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-bold text-lg text-azul-oscuro mb-3">🐠 Peces (comunes)</h3>
+              <h3 className="font-bold text-lg text-azul-oscuro mb-3">Peces (comunes)</h3>
               <ul className="text-gris-claro space-y-1">
-                <li>🐠 Dorada</li>
-                <li>🐠 Mero</li>
-                <li>🐠 Caballa</li>
-                <li>🐠 Pez fraile</li>
-                <li>🐠 Pez espada pequeño</li>
+                <li>Dorada</li>
+                <li>Mero</li>
+                <li>Caballa</li>
+                <li>Pez fraile</li>
+                <li>Pez espada pequeño</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg text-azul-oscuro mb-3">🦀 Invertebrados</h3>
+              <h3 className="font-bold text-lg text-azul-oscuro mb-3">Invertebrados</h3>
               <ul className="text-gris-claro space-y-1">
-                <li>🦀 Erizos de mar</li>
-                <li>🦀 Estrellas de mar</li>
-                <li>🦀 Camarones</li>
-                <li>🦀 Anémonas</li>
-                <li>🦀 Pulpos (raros)</li>
+                <li>Erizos de mar</li>
+                <li>Estrellas de mar</li>
+                <li>Camarones</li>
+                <li>Anémonas</li>
+                <li>Pulpos (raros)</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg text-azul-oscuro mb-3">⭐ Rarezas</h3>
+              <h3 className="font-bold text-lg text-azul-oscuro mb-3">Rarezas</h3>
               <ul className="text-gris-claro space-y-1">
-                <li>🐢 Tortuga marina</li>
-                <li>🐬 Delfines</li>
-                <li>🐙 Langosta</li>
+                <li>Tortuga marina</li>
+                <li>Delfines</li>
+                <li>Langosta</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg text-azul-oscuro mb-3">🌿 Flora Marina</h3>
+              <h3 className="font-bold text-lg text-azul-oscuro mb-3">Flora Marina</h3>
               <ul className="text-gris-claro space-y-1">
-                <li>🌿 Posidonia oceanica</li>
-                <li>🌿 Algas verdes</li>
-                <li>🌿 Algas rojas</li>
+                <li>Posidonia oceanica</li>
+                <li>Algas verdes</li>
+                <li>Algas rojas</li>
               </ul>
             </div>
           </div>
@@ -142,31 +142,30 @@ export default function SnorkelPage() {
         <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">Preguntas Frecuentes</h2>
         <div className="space-y-4 mb-12">
           <div className="border-b-2 border-azul-claro pb-4">
-            <h3 className="font-bold text-lg text-azul-oscuro mb-2">❓ ¿Necesito experiencia previa?</h3>
+            <h3 className="font-bold text-lg text-azul-oscuro mb-2">¿Necesito experiencia previa?</h3>
             <p className="text-gris-claro text-sm">No. El patrón proporciona instrucciones básicas. Las aguas del Mar Menor son calmadas y claras, perfectas para principiantes. Somos muy cautelosos con la seguridad.</p>
           </div>
-          <div className="border-b pb-4">
-            <h3 className="font-bold text-lg text-gray-900 mb-2">¿Es seguro para niños?</h3>
-            <p className="text-gray-700">Sí. Proporcionamos chalecos salvavidas ajustables por edad, gafas y aletas de tamaño infantil. Supervisión constante. Elegimos spots tranquilos para familias.</p>
+          <div className="border-b-2 border-azul-claro pb-4">
+            <h3 className="font-bold text-lg text-azul-oscuro mb-2">¿Es seguro para niños?</h3>
+            <p className="text-gris-claro text-sm">Sí. Proporcionamos chalecos salvavidas ajustables por edad, gafas y aletas de tamaño infantil. Supervisión constante. Elegimos spots tranquilos para familias.</p>
           </div>
-          <div className="border-b pb-4">
-            <h3 className="font-bold text-lg text-gray-900 mb-2">¿Qué temperature tiene el agua?</h3>
-            <p className="text-gray-700">Verano: 24-26°C (cálida). Primavera/Otoño: 18-22°C (fresquita). No es fría, pero si eres sensible puedes traer un bañador de lycra.</p>
+          <div className="border-b-2 border-azul-claro pb-4">
+            <h3 className="font-bold text-lg text-azul-oscuro mb-2">¿Qué temperatura tiene el agua?</h3>
+            <p className="text-gris-claro text-sm">Verano: 24-26°C (cálida). Primavera/Otoño: 18-22°C (fresquita). No es fría, pero si eres sensible puedes traer un bañador de lycra.</p>
           </div>
-          <div className="border-b pb-4">
-            <h3 className="font-bold text-lg text-gray-900 mb-2">¿Puedo traer mi propia cámara?</h3>
-            <p className="text-gray-700">Sí. Recomendamos una bolsa estanca para smartphone o cámara subacuática. El patrón puede ayudarte con fotos de grupo.</p>
+          <div className="border-b-2 border-azul-claro pb-4">
+            <h3 className="font-bold text-lg text-azul-oscuro mb-2">¿Puedo traer mi propia cámara?</h3>
+            <p className="text-gris-claro text-sm">Sí. Recomendamos una bolsa estanca para smartphone o cámara subacuática. El patrón puede ayudarte con fotos de grupo.</p>
           </div>
-          <div className="border-b pb-4">
-            <h3 className="font-bold text-lg text-gray-900 mb-2">¿Qué hago si me canso?</h3>
-            <p className="text-gray-700">Vuelve al velero. No hay presión de tiempo. Descansa, toma agua, repite cuando tengas energía. Las tandas de snorkel duran 30-45 minutos.</p>
+          <div className="border-b-2 border-azul-claro pb-4">
+            <h3 className="font-bold text-lg text-azul-oscuro mb-2">¿Qué hago si me canso?</h3>
+            <p className="text-gris-claro text-sm">Vuelve al velero. No hay presión de tiempo. Descansa, toma agua, repite cuando tengas energía. Las tandas de snorkel duran 30-45 minutos.</p>
           </div>
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-12">Reserva tu Experiencia de Snorkel</h2>
         <div className="bg-gradient-to-r from-azul to-azul-claro p-8 rounded-lg text-white text-center">
-          <h2 className="text-2xl font-bold mb-3">Disfruta del Snorkel en La Manga</h2>
-          <p className="mb-6">Elige charter de 4, 6 u 8 horas en los mejores spots</p>
+          <h2 className="text-3xl font-bold mb-3">¿Listo para tu aventura en la vela?</h2>
+          <p className="mb-6">Reserva tu charter y crea recuerdos inolvidables</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/34637715281" className="bg-white text-azul font-bold py-3 px-8 rounded-lg hover:bg-azul-claro transition-colors cursor-pointer">
               WhatsApp: +34 637 715 281

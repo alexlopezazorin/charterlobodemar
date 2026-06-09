@@ -15,17 +15,17 @@ export default function CharterPage() {
         <h2 className="text-3xl font-bold text-azul-oscuro mb-6 mt-12">¿Qué Incluye?</h2>
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {[
-            { icon: "⛵", title: "Velero Katmandú", desc: "Completamente equipado y moderno" },
-            { icon: "👨‍⚓", title: "Patrón Profesional", desc: "7+ años en Mar Menor" },
-            { icon: "⛽", title: "Combustible", desc: "Hasta 2h de navegación" },
-            { icon: "🔒", title: "Seguridad", desc: "Chalecos, botiquín, equipos" },
-            { icon: "🤿", title: "Snorkel Completo", desc: "Gafas, tubo, aletas" },
-            { icon: "🏄", title: "Paddle Surf", desc: "Incluido en el charter" },
-            { icon: "🚿", title: "Ducha Agua Dulce", desc: "Post-baño" },
-            { icon: "🎵", title: "Altavoz Bluetooth", desc: "Tu música a bordo" }
+            { title: "Velero Katmandú", desc: "Completamente equipado y moderno" },
+            { title: "Patrón Profesional", desc: "7+ años en Mar Menor" },
+            { title: "Combustible", desc: "Hasta 2h de navegación" },
+            { title: "Seguridad", desc: "Chalecos, botiquín, equipos" },
+            { title: "Snorkel Completo", desc: "Gafas, tubo, aletas" },
+            { title: "Paddle Surf", desc: "Incluido en el charter" },
+            { title: "Ducha Agua Dulce", desc: "Post-baño" },
+            { title: "Altavoz Bluetooth", desc: "Tu música a bordo" }
           ].map((item, i) => (
-            <div key={i} className="flex gap-4 items-start">
-              <div className="text-4xl">{item.icon}</div>
+            <div key={i} className="flex gap-3 items-start">
+              <div className="text-azul font-bold">✓</div>
               <div>
                 <h3 className="font-bold text-azul-oscuro">{item.title}</h3>
                 <p className="text-gris-claro text-sm">{item.desc}</p>
@@ -67,7 +67,7 @@ export default function CharterPage() {
             { name: "Isla Perdiguera", desc: "Pequeña isla tranquila. Fondeo 3-6m, perfecto para principiantes. Zona protegida." },
             { name: "Cabo de Palos", desc: "Faro histórico icónico. Snorkel avanzado, panorámicas, posible avistamiento de delfines." }
           ].map((spot, i) => (
-            <div key={i} className="bg-white border-l-4 border-acento p-4 rounded">
+            <div key={i} className="bg-white border-l-4 border-acento p-4 rounded servicio-card">
               <h3 className="font-bold text-azul-oscuro">{spot.name}</h3>
               <p className="text-gris-claro text-sm mt-1">{spot.desc}</p>
             </div>

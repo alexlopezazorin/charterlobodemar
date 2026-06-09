@@ -179,14 +179,15 @@ export default function FondearPage() {
           </div>
         </div>
 
-        <div className="bg-blue-100 border border-blue-300 rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-bold text-blue-900 mb-4">Experimenta el Fondeo en La Manga</h2>
-          <p className="text-blue-800 mb-6 text-lg">
-            Reserva un charter con nosotros y deja que nuestro patrón profesional te guíe a través de los mejores fondeos de La Manga.
-          </p>
+        <div className="bg-gradient-to-r from-azul to-azul-claro p-8 rounded-lg text-white text-center">
+          <h2 className="text-3xl font-bold mb-3">¿Listo para tu aventura en la vela?</h2>
+          <p className="mb-6">Reserva tu charter y crea recuerdos inolvidables</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/34637715281" className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg">
-              📱 WhatsApp: +34 637 715 281
+            <a href="https://wa.me/34637715281" className="bg-white text-azul font-bold py-3 px-8 rounded-lg hover:bg-azul-claro transition-colors cursor-pointer">
+              WhatsApp: +34 637 715 281
+            </a>
+            <a href="mailto:lobodemarcharter@gmail.com" className="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
+              Email: lobodemarcharter@gmail.com
             </a>
           </div>
         </div>
