@@ -164,7 +164,7 @@ export default function SnorkelPage() {
         </div>
 
         <div className="bg-gradient-to-r from-azul to-azul-claro p-8 rounded-lg text-white text-center">
-          <h2 className="text-3xl font-bold mb-3">¿Listo para tu aventura en la vela?</h2>
+          <h2 className="text-3xl font-bold mb-3">¿Listo para el alquiler de velero en La Manga?</h2>
           <p className="mb-6">Reserva tu charter y crea recuerdos inolvidables</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/34637715281" className="bg-white text-azul font-bold py-3 px-8 rounded-lg hover:bg-azul-claro transition-colors cursor-pointer">
