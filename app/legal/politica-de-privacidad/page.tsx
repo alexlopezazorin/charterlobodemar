@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Política de Privacidad",
   description: "Política de privacidad de Charter Lobo de Mar. Información sobre cómo tratamos tus datos personales.",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 

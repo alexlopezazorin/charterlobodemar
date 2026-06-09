@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Aviso Legal",
   description: "Aviso legal de Charter Lobo de Mar. Información sobre el titular del sitio web y condiciones de uso.",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 

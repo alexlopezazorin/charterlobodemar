@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones",
   description: "Términos y condiciones del servicio de Charter Lobo de Mar.",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 

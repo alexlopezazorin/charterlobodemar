@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-2 font-medium text-white text-sm items-center md:items-start">
                     <h2 className="text-[22px] text-center md:text-left">CONTACTO</h2>
                     <a href="https://wa.me/637715281?text=Hola,%20quiero%20reservar%20una%20excursi%C3%B3n%20en%20barco%20para%20el%20siguiente%20fin%20de%20semana.%20%C2%BFTienes%20disponibilidad?" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 w-fit hover:-translate-y-0.5 transition-transform"><WhatsappIcon className="h-6 w-6 shrink-0"/><p>+34 637 715 281</p></a>
-                    <a href="mailto:lobodemarcharter@gmail.com" className="flex items-center gap-2 w-fit hover:-translate-y-0.5 transition-transform"><MailIcon className="h-6 w-6 shrink-0" /><p>lobodemarcharter@gmail.com</p></a>
+                    <a href="mailto:lobodemarcharter@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 w-fit hover:-translate-y-0.5 transition-transform"><MailIcon className="h-6 w-6 shrink-0" /><p>lobodemarcharter@gmail.com</p></a>
                     <a href="https://www.facebook.com/profile.php?id=61571894465835" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 w-fit hover:-translate-y-0.5 transition-transform"><FacebookIcon className="h-6 w-6 shrink-0"/><p>Charter Lobo de Mar</p></a>
                     <a href="https://www.instagram.com/charterlobodemar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 w-fit hover:-translate-y-0.5 transition-transform"><InstagramIcon className="h-7 w-7 shrink-0"/><p>charterlobodemar</p></a>
                 </div>
