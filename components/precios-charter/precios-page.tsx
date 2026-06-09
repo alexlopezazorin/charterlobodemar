@@ -10,33 +10,36 @@ export default function PreciosPage() {
           Nuestros precios son <strong>transparentes, sin sorpresas</strong>. El alquiler incluye todo: velero equipado, patrón profesional, combustible, seguro, material de snorkel. No hay cargos ocultos. Desde <strong>200€ para 2 horas hasta 480€ para jornada completa</strong>.
         </p>
 
-        <h2 className="text-3xl font-bold text-azul-oscuro mb-8 mt-12">Nuestros Paquetes</h2>
+        <h2 className="text-3xl font-bold text-azul-oscuro mb-4">Nuestros Paquetes</h2>
+        <p className="text-gris-claro mb-8 bg-azul-claro/10 p-4 rounded-lg">
+          <strong>Temporada Baja</strong> (1 Sep - 30 Jun) | <strong>Temporada Alta</strong> (1 Jul - 31 Ago)
+        </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Charter 2 Horas */}
-          <div className="border-2 border-blue-200 rounded-lg p-8 hover:shadow-xl transition">
+          <div className="border-2 border-azul-claro/30 rounded-lg p-8 hover:shadow-xl transition servicio-card">
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-blue-600 mb-2">Charter 2 Horas</h3>
-              <p className="text-gray-600 text-lg">Puesta de sol especial</p>
+              <h3 className="text-3xl font-bold text-azul mb-2">Charter 2 Horas</h3>
+              <p className="text-gris-claro text-lg">Puesta de sol especial</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-azul-oscuro">200<span className="text-2xl font-normal">€</span></p>
-              <p className="text-gray-600 text-sm mt-2">Precio por velero (no por persona)</p>
+              <p className="text-5xl font-bold text-acento">200€ / 250€</p>
+              <p className="text-gris-claro text-sm mt-2">Por velero (no por persona) | Baja / Alta</p>
             </div>
 
-            <div className="mb-6 pb-6 border-b">
+            <div className="mb-6 pb-6 border-b border-azul-claro/20">
               <p className="text-gris-claro font-semibold mb-3">Horario:</p>
-              <p className="text-gris-claro">19:30-21:30 (adaptable según temporada)</p>
+              <p className="text-gris-claro">19:30-21:30 (alta: 20:00-22:00)</p>
             </div>
 
             <div className="mb-6">
               <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
               <ul className="text-gris-claro space-y-2 text-sm">
                 <li>✓ Velero Katmandú equipado</li>
-                <li>✓ Patrón profesional</li>
+                <li>✓ Patrón profesional (+10 años)</li>
                 <li>✓ Combustible</li>
-                <li>✓ Equipo snorkel básico</li>
+                <li>✓ Equipo snorkel completo</li>
                 <li>✓ Seguros y seguridad</li>
               </ul>
             </div>
@@ -48,18 +51,18 @@ export default function PreciosPage() {
           </div>
 
           {/* Charter 4 Horas */}
-          <div className="border-2 border-green-200 rounded-lg p-8 hover:shadow-xl transition">
+          <div className="border-2 border-azul-claro/30 rounded-lg p-8 hover:shadow-xl transition servicio-card">
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-green-600 mb-2">Charter 4 Horas</h3>
-              <p className="text-gray-600 text-lg">Media jornada</p>
+              <h3 className="text-3xl font-bold text-azul mb-2">Charter 4 Horas</h3>
+              <p className="text-gris-claro text-lg">Media jornada</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-azul-oscuro">300<span className="text-2xl font-normal">€</span></p>
-              <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
+              <p className="text-5xl font-bold text-acento">300€ / 350€</p>
+              <p className="text-gris-claro text-sm mt-2">Por velero | Baja / Alta</p>
             </div>
 
-            <div className="mb-6 pb-6 border-b">
+            <div className="mb-6 pb-6 border-b border-azul-claro/20">
               <p className="text-gris-claro font-semibold mb-3">Horarios:</p>
               <p className="text-gris-claro">10:00-14:00 ó 16:00-20:00</p>
             </div>
@@ -67,11 +70,11 @@ export default function PreciosPage() {
             <div className="mb-6">
               <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
               <ul className="text-gris-claro space-y-2 text-sm">
-                <li>✓ Todo lo anterior</li>
-                <li>✓ Navegación hacia fondeos</li>
-                <li>✓ Una parada snorkel completa</li>
-                <li>✓ Paddle surf</li>
-                <li>✓ Ducha agua dulce</li>
+                <li>✓ Velero Katmandú</li>
+                <li>✓ Patrón profesional (+10 años)</li>
+                <li>✓ Navegación y fondeo</li>
+                <li>✓ Parada snorkel completa</li>
+                <li>✓ Paddle surf, ducha agua dulce</li>
               </ul>
             </div>
 
@@ -82,18 +85,18 @@ export default function PreciosPage() {
           </div>
 
           {/* Charter 6 Horas */}
-          <div className="border-2 border-purple-200 rounded-lg p-8 hover:shadow-xl transition">
+          <div className="border-2 border-azul-claro/30 rounded-lg p-8 hover:shadow-xl transition servicio-card">
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-purple-600 mb-2">Charter 6 Horas</h3>
-              <p className="text-gray-600 text-lg">Jornada ampliada</p>
+              <h3 className="text-3xl font-bold text-azul mb-2">Charter 6 Horas</h3>
+              <p className="text-gris-claro text-lg">Jornada ampliada</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-azul-oscuro">390<span className="text-2xl font-normal">€</span></p>
-              <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
+              <p className="text-5xl font-bold text-acento">390€ / 440€</p>
+              <p className="text-gris-claro text-sm mt-2">Por velero | Baja / Alta</p>
             </div>
 
-            <div className="mb-6 pb-6 border-b">
+            <div className="mb-6 pb-6 border-b border-azul-claro/20">
               <p className="text-gris-claro font-semibold mb-3">Horario:</p>
               <p className="text-gris-claro">Flexible según grupo (ej: 09:00-15:00)</p>
             </div>
@@ -101,7 +104,7 @@ export default function PreciosPage() {
             <div className="mb-6">
               <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
               <ul className="text-gris-claro space-y-2 text-sm">
-                <li>✓ Todo lo anterior</li>
+                <li>✓ Velero y patrón profesional</li>
                 <li>✓ 2-3 paradas snorkel</li>
                 <li>✓ Múltiples fondeos</li>
                 <li>✓ Nevera Igloo con espacio</li>
@@ -116,21 +119,21 @@ export default function PreciosPage() {
           </div>
 
           {/* Charter 8 Horas */}
-          <div className="border-2 border-orange-200 rounded-lg p-8 hover:shadow-xl transition bg-orange-50">
+          <div className="border-2 border-acento rounded-lg p-8 hover:shadow-xl transition servicio-card bg-acento/5">
             <div className="mb-6">
-              <div className="inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
+              <div className="inline-block bg-acento text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
                 MÁS POPULAR
               </div>
-              <h3 className="text-3xl font-bold text-orange-600 mb-2">Charter 8 Horas</h3>
-              <p className="text-gray-600 text-lg">Jornada completa</p>
+              <h3 className="text-3xl font-bold text-azul mb-2">Charter 8 Horas</h3>
+              <p className="text-gris-claro text-lg">Jornada completa</p>
             </div>
 
             <div className="mb-6">
-              <p className="text-5xl font-bold text-azul-oscuro">480<span className="text-2xl font-normal">€</span></p>
-              <p className="text-gray-600 text-sm mt-2">Precio por velero</p>
+              <p className="text-5xl font-bold text-acento">480€ / 530€</p>
+              <p className="text-gris-claro text-sm mt-2">Por velero | Baja / Alta</p>
             </div>
 
-            <div className="mb-6 pb-6 border-b">
+            <div className="mb-6 pb-6 border-b border-azul-claro/20">
               <p className="text-gris-claro font-semibold mb-3">Horario:</p>
               <p className="text-gris-claro">Flexible, ej: 08:30-16:30 (pausa comida)</p>
             </div>
@@ -138,9 +141,9 @@ export default function PreciosPage() {
             <div className="mb-6">
               <p className="text-gris-claro font-semibold mb-3">Incluye:</p>
               <ul className="text-gris-claro space-y-2 text-sm">
-                <li>✓ Todo lo anterior</li>
-                <li>✓ 3-4 paradas snorkel</li>
-                <li>✓ Múltiples fondeos icónicos</li>
+                <li>✓ Velero Katmandú + patrón (+10 años)</li>
+                <li>✓ 3-4 paradas snorkel múltiples</li>
+                <li>✓ Fondeos icónicos de La Manga</li>
                 <li>✓ Experiencia completa del día</li>
                 <li>✓ Navegación de largo recorrido</li>
               </ul>

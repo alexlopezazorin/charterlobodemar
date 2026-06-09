@@ -16,8 +16,8 @@ export default function CharterPage() {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {[
             { title: "Velero Katmandú", desc: "Completamente equipado y moderno" },
-            { title: "Patrón Profesional", desc: "7+ años en Mar Menor" },
-            { title: "Combustible", desc: "Hasta 2h de navegación" },
+            { title: "Patrón Profesional", desc: "+10 años en Mar Menor" },
+            { title: "Combustible", desc: "Incluido en todas las excursiones" },
             { title: "Seguridad", desc: "Chalecos, botiquín, equipos" },
             { title: "Snorkel Completo", desc: "Gafas, tubo, aletas" },
             { title: "Paddle Surf", desc: "Incluido en el charter" },
