@@ -9,7 +9,7 @@ import WhatsAppButton from "@/components/common/whatsapp-button";
 
 const outfit = Outfit({ subsets: ['latin'] });
 
-export const SITE_URL = "https://charterlobodemar.es";
+export const SITE_URL = "https://www.charterlobodemar.es";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
